@@ -1,14 +1,27 @@
 *, html
     margin: 0
     padding: 0
-    
+    font-family: "Open Sans", sans-serif
+
+body
+    background: #f6f6f6
+    padding-top: 53px
+
+h1, h2, h3, h4, h5, h6
+    font-family: "Montserrat", sans-serif
+    font-weight: bold
+    color:#2e2e33
+
 header
     width: 100%
     position: fixed
     left: 0
     top: 0
     box-sizing: border-box
-    padding: 2vh 15vw
+    padding: 15px 15vw
+    user-select: none
+    border-bottom: 1px solid #e3e4e6
+    background: #ffffff
     nav
         display: flex
         justify-content: space-between
@@ -18,3 +31,69 @@ header
             list-style: none
             li
                 margin-left: 15px
+
+#section-1
+    background: #ffffff
+    border-bottom: 1px solid #e3e4e6
+    padding: 15px 15vw
+    user-select: none
+    h1
+        font-size: 2.5em
+        margin-bottom: 15px
+    p
+        margin-bottom: 15px
+    #description
+        display: flex
+        @media screen and (max-width: 768px)
+            flex-direction: column
+        .description-block
+            padding: 7px 15px
+            box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
+            border-radius: 30px
+            margin-right: 10px 
+            color: #ffffff
+            @media screen and ( max-width: 768px)
+                width: 100%
+                box-sizing: border-box
+                padding: 15px 15px
+                border-radius: 15px
+                margin-bottom: 15px
+                
+            
+                
+            &:first-child
+                background: #E44D26
+                background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
+                background: linear-gradient(to right, #f5af19,  #f58b19)
+                
+            &:nth-child(2)
+                background: #f12711
+                background: -webkit-linear-gradient(to right, #f58b19, #f12711)
+                background: linear-gradient(to right, #f58b19, #f12711)
+
+            &:nth-child(3)
+                background: #f85032
+                background: -webkit-linear-gradient(to right,#f12711, #f85032)
+                background: linear-gradient(to right,#f12711, #f85032)
+
+#section-2
+    padding: 15px 15vw
+    padding-top: 30px
+    .figure-header
+        margin-bottom: 30px
+    figure
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+        @media screen and (max-width: 768px)
+            grid-template-columns: repeat(auto-fit, minmax(100%, 1fr))
+            
+        grid-gap: 25px
+        margin-bottom: 30px
+        .block
+            background-color: #ffffff
+            border-radius: 25px
+            padding: 15px 
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05)
+            height: 200px
+
+        
