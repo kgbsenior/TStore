@@ -85,6 +85,13 @@ header
     #select-heroes
         .block
             position: relative
+            transition: 0.1s
+            user-select: none
+            cursor: pointer
+            &:active
+                transform: scale(1.05)
+                transition: 0.1s
+                box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15)
             img
                 width: 100%
                 height: 200px
@@ -111,4 +118,43 @@ header
             padding: 15px 
             box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05)
 
+#cart
+    position: fixed
+    right: -13vw
+    top: 0
+    height: 100vh
+    width: 13vw
+    background: #ffffff
+    border-left: 1px solid #e3e4e6
+    padding-top: 65px
+    padding-left: 15px
+    box-sizing: border-box
+    transition: 0.5s
+    &.active-cart
+        right: 0
+        transition: 0.5s
+    #generate
+        position: absolute
         
+        bottom: 15px
+        background-color: red
+        user-select: none
+        left: 50%
+        width: 90%
+        transform: translateX(-50%)
+        text-align: center
+        box-sizing: border-box
+        color: #ffffff
+        padding: 7px 15px
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
+        border-radius: 30px
+        background: #E44D26
+        background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
+        background: linear-gradient(to right, #f5af19,  #f58b19)
+
+::-webkit-scrollbar
+    width: 6px
+    background-color: #cecece
+
+::-webkit-scrollbar-thumb
+    background-color: #7c7c7c
