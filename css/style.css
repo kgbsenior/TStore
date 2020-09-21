@@ -44,6 +44,12 @@ header nav {
           align-items: center;
 }
 
+header nav figure {
+  font-weight: bold;
+  color: #f59d19;
+  font-size: 1.3em;
+}
+
 header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,8 +76,25 @@ header nav ul li {
   margin-bottom: 15px;
 }
 
-#section-1 p {
+#section-1 span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-bottom: 15px;
+}
+
+#section-1 span div:first-child {
+  width: 50%;
+}
+
+#section-1 span div:last-child {
+  width: 50%;
+  text-align: right;
+  font-weight: bold;
 }
 
 #section-1 #description {
@@ -95,6 +118,7 @@ header nav ul li {
           box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
   margin-right: 10px;
+  margin-top: -40px;
   color: #ffffff;
 }
 
@@ -147,6 +171,11 @@ header nav ul li {
   cursor: pointer;
 }
 
+#section-2 #select-heroes .block input {
+  cursor: pointer;
+  pointer-events: none;
+}
+
 #section-2 #select-heroes .block:active {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
@@ -196,6 +225,12 @@ header nav ul li {
   padding: 15px;
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05);
           box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05);
+}
+
+@media screen and (min-width: 768px) {
+  #section-2 figure .block {
+    max-width: 317px;
+  }
 }
 
 #cart {

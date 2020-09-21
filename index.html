@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <nav>
             <figure>
-                     Fairy Tale Store   
+                Fairy Tale Store
             </figure>
             <ul>
                 <li>Home</li>
@@ -24,7 +30,30 @@
     <main>
         <section id="section-1">
             <h1>Create your own tale!</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore voluptatum, <br> minus labore, adipisci obcaecati porro maxime sapiente fugit blanditiis quae consectetur <br> accusantium recusandae delectus quod iste voluptas, beatae quaerat unde laborum hic <br> deserunt quis! Ipsum, est ad voluptatibus cupiditate ut sint minus reiciendis repellendus <br> enim quia? Similique voluptate perferendis voluptates.</p>
+            <span>
+                <div>
+                    Welcome to our Internet site “Fairy tale store”! We can help you to develop your communicative
+                    skills 
+                    with the help of storytelling technique. Here you have an opportunity to make up your own fairy tale
+                    in 
+                    Belarusian or English using traditional formulae and clichés. Just choose the language for your
+                    future 
+                    story and here we go…
+                </div>
+                <div>
+                    Fairy tales are contagious.
+                    <br>
+                    They are passed from person to person,
+                    <br>
+                    From generation to generation.
+                    <br>
+                    A fairy tale unites us with those
+                    <br>
+                    Who lived in this world long before us.
+                    <br>
+                    Neil Gaiman
+                </div>
+            </span>
             <figure id="description">
                 <div class="description-block">Choose your heroes!</div>
                 <div class="description-block">Choose the story!</div>
@@ -35,33 +64,33 @@
             <h2 class="figure-header">Heroes</h2>
             <figure id="select-heroes">
                 <article class="block" data-hero="0">
-                    <img src="img/1.jpg" alt="">
-                    <h3>Bolotnik</h3>
+                    <img src="img/asilak.jpg" alt="">
+                    <h3>Asilak</h3>
                     <input class="checkbox" type="checkbox" name="" id="">
                 </article>
                 <article class="block" data-hero="1">
-                    <img src="img/2.jpg" alt="">
-                    <h3>Bolotnik</h3>
+                    <img src="img/dzedka.jpg" alt="">
+                    <h3>Dzedka</h3>
                     <input class="checkbox" type="checkbox" name="" id="">
                 </article>
                 <article class="block" data-hero="2">
-                    <img src="img/3.jpg" alt="">
-                    <h3>Bolotnik</h3>
+                    <img src="img/balamuten.jpg" alt="">
+                    <h3>Balamuten</h3>
                     <input class="checkbox" type="checkbox" name="" id="">
                 </article>
                 <article class="block" data-hero="3">
-                    <img src="img/4.jpg" alt="">
-                    <h3>Bolotnik</h3>
+                    <img src="img/fishtsar.jpg" alt="">
+                    <h3>Fish Tsar</h3>
                     <input class="checkbox" type="checkbox" name="" id="">
                 </article>
                 <article class="block" data-hero="4">
-                    <img src="img/5.jpg" alt="">
-                    <h3>Bolotnik</h3>
+                    <img src="img/zhiten.jpg" alt="">
+                    <h3>Zhiten</h3>
                     <input class="checkbox" type="checkbox" name="" id="">
                 </article>
                 <article class="block" data-hero="5">
-                    <img src="img/6.jpg" alt="">
-                    <h3>Bolotnik</h3>
+                    <img src="img/hatnik.jpg" alt="">
+                    <h3>Hatnik</h3>
                     <input class="checkbox" type="checkbox" name="" id="">
                 </article>
             </figure>
@@ -85,17 +114,24 @@
             </figure>
 
 
-            
+
         </section>
     </main>
     <footer>
-    
+
     </footer>
     <div id="cart">
         <h2 id="cart-header">Cart</h2>
+        <h3>Heroes:</h3>
+        <div id="heroes-place">
+
+        </div>
+        <h3>Story:</h3>
+        <h3>Ending:</h3>
         <p id="selected-heroes-counter"></p>
         <div id="generate">Generate!</div>
     </div>
     <script src="js/script.js"></script>
 </body>
+
 </html>
