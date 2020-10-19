@@ -2,6 +2,11 @@
     margin: 0
     padding: 0
     font-family: "Open Sans", sans-serif
+    scroll-behavior: smooth
+
+a
+    text-decoration: none
+    color: unset
 
 body
     background: #f6f6f6
@@ -34,6 +39,8 @@ header
         ul
             display: flex
             list-style: none
+            @media screen and ( max-width: 768px )
+                display: none
             li
                 margin-left: 15px
 
@@ -49,12 +56,24 @@ header
         display: flex
         flex-direction: row
         margin-bottom: 15px
+        @media screen and ( max-width: 768px  )
+            display: block
         div:first-child
             width: 50%
+            @media screen and ( max-width: 768px )
+                width: auto
+                text-align: left
+                display: block
         div:last-child
             width: 50%
             text-align: right
             font-weight: bold
+            @media screen and ( max-width: 768px )
+                width: auto
+                text-align: left
+                display: block
+                margin-top: 30px
+                
     #description
         display: flex
         @media screen and (max-width: 768px)
@@ -93,6 +112,43 @@ header
 #section-2
     padding: 15px 15vw
     padding-top: 30px
+    #description
+        display: flex
+        @media screen and (max-width: 768px)
+            flex-direction: column
+        .description-block
+            padding: 7px 15px
+            box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
+            border-radius: 30px
+            margin-right: 10px 
+            margin-bottom: 30px
+            color: #ffffff
+            display: block
+            @media screen and ( max-width: 768px)
+                width: 100%
+                box-sizing: border-box
+                padding: 15px 15px
+                border-radius: 15px
+                margin-bottom: 15px
+        a  
+            &:first-child
+                div
+                    background: #E44D26
+                    background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
+                    background: linear-gradient(to right, #f5af19,  #f58b19)
+                
+            &:nth-child(2)
+                div
+                    background: #f12711
+                    background: -webkit-linear-gradient(to right, #f58b19, #f12711)
+                    background: linear-gradient(to right, #f58b19, #f12711)
+
+            &:nth-child(3)
+                div
+                    background: #f85032
+                    background: -webkit-linear-gradient(to right,#f12711, #f85032)
+                    background: linear-gradient(to right,#f12711, #f85032)
+    
     .figure-header
         margin-bottom: 30px
     #select-heroes
@@ -148,9 +204,50 @@ header
     padding-left: 15px
     box-sizing: border-box
     transition: 0.5s
+    @media screen and ( max-width: 768px )
+        width: 100vw
+        right: -100vw
     &.active-cart
         right: 0
         transition: 0.5s
+    #cart-btns
+        display: flex
+        justify-content: space-between
+        position: absolute
+        bottom: 15px
+        width: 90%
+        box-sizing: border-box
+        @media screen and ( max-width: 768px )
+            #generate
+                position: static
+                background-color: red
+                user-select: none
+                width: 100%
+                display: block
+                text-align: center
+                box-sizing: border-box
+                color: #ffffff
+                padding: 7px 15px
+                box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
+                border-radius: 30px
+                background: #E44D26
+                background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
+                background: linear-gradient(to right, #f5af19,  #f58b19)
+            #closecartbtn
+                background-color: red
+                user-select: none
+                width: 100%
+                margin-right: 100px
+                display: block
+                text-align: center
+                box-sizing: border-box
+                color: #ffffff
+                padding: 7px 15px
+                box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
+                border-radius: 30px
+                background: #E44D26
+                background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
+                background: linear-gradient(to right, #f5af19,  #f58b19)
     #generate
         position: absolute
         
@@ -169,7 +266,19 @@ header
         background: #E44D26
         background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
         background: linear-gradient(to right, #f5af19,  #f58b19)
-
+    #closecart
+        background-color: red
+        user-select: none
+        width: 30%
+        text-align: center
+        box-sizing: border-box
+        color: #ffffff
+        padding: 7px 15px
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
+        border-radius: 30px
+        background: #E44D26
+        background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
+        background: linear-gradient(to right, #f5af19,  #f58b19)
 ::-webkit-scrollbar
     width: 6px
     background-color: #cecece

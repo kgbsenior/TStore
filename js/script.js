@@ -5,6 +5,13 @@ let cart = document.getElementById("cart")
 let blockcounter = 0
 let heroesplace = document.getElementById("heroes-place")
 
+
+let closecartbtn = document.getElementById("closecartbtn")
+closecartbtn.addEventListener('click', ()=>{
+    cart.classList.remove("active-cart")
+})
+
+
 selectedblocks.length = heroes_blocks.length
 for(let i = 0; i<selectedblocks.length;++i){
     selectedblocks[i] = 0
