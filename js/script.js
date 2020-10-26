@@ -4,13 +4,33 @@ let selectedblocks = {}
 let cart = document.getElementById("cart")
 let blockcounter = 0
 let heroesplace = document.getElementById("heroes-place")
-
+let opencartbtn = document.getElementsByClassName('opencart')
+let cartOpened = false
 
 let closecartbtn = document.getElementById("closecartbtn")
-closecartbtn.addEventListener('click', ()=>{
-    cart.classList.remove("active-cart")
-})
 
+document.getElementById('darkscreen').addEventListener('click', ()=>{
+    openCart()
+})
+function openCart(){
+    if(!cartOpened){
+        cart.classList.add("active-cart")
+        document.getElementById('darkscreen').classList.add('active')
+        cartOpened = !cartOpened
+    }
+    else{
+        cart.classList.remove("active-cart")
+        document.getElementById('darkscreen').classList.remove('active')
+        cartOpened = !cartOpened
+    }
+}
+
+
+for(i of opencartbtn){
+    i.addEventListener('click', ()=>{
+        openCart()
+    })
+}
 
 selectedblocks.length = heroes_blocks.length
 for(let i = 0; i<selectedblocks.length;++i){
@@ -21,8 +41,6 @@ for(let block of heroes_blocks){
     block.addEventListener("click", (elem)=>{
         console.log(block.dataset.hero)
         let checkbox = block.querySelector("input")
-        
-        cart.classList.add("active-cart")
         if(!checkbox.checked){
             checkbox.checked = true
             selectedblocks[block.dataset.hero] = 1
@@ -39,15 +57,6 @@ for(let block of heroes_blocks){
             selectedblocks[block.dataset.hero] = 0
             console.log(checkbox.checked)
             --blockcounter
-            if(blockcounter==0){
-                cart.classList.remove("active-cart")
-            }
-            /* cart.querySelector("p").innerHTML=""
-              for(let i = 0;i<selectedblocks.length; ++i){
-                cart.querySelector("p").insertAdjacentHTML("beforeend", selectedblocks[i])
-                cart.querySelector("p").insertAdjacentHTML("beforeend", " ")
-            }
-            */
         }
         if(selectedblocks[0]==1){
             if(!document.getElementById("hero1")){

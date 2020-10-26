@@ -27,28 +27,45 @@ header
     user-select: none
     border-bottom: 1px solid #e3e4e6
     background: #ffffff
-    z-index: 10
+    z-index: 1
+    @media screen and ( max-width: 768px )
+        padding: 15px 7vw
     nav
         display: flex
         justify-content: space-between
         align-items: center
+        #cartbtn
+            text-shadow: 0px 0px 5px rgba(0,0,0,0.15)
+            @media screen and ( min-width: 768px )
+                display: none
         figure
             font-weight: bold
-            color: #f59d19
+            background: #396afc
+            background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#396afc))
+            background: linear-gradient(to right, #b162e2, #396afc)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
             font-size: 1.3em
         ul
             display: flex
             list-style: none
+            i
+                margin-right: 7px
             @media screen and ( max-width: 768px )
                 display: none
             li
-                margin-left: 15px
+                margin-right: 30px
+                &#cartbtn
+                    display: block
 
 #section-1
     background: #ffffff
     border-bottom: 1px solid #e3e4e6
     padding: 15px 15vw
     user-select: none
+    @media screen and ( max-width: 768px )
+        padding: 15px 7vw
+        
     h1
         font-size: 2.5em
         margin-bottom: 15px
@@ -91,27 +108,27 @@ header
                 padding: 15px 15px
                 border-radius: 15px
                 margin-bottom: 15px
-                
-            
-                
             &:first-child
-                background: #E44D26
-                background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
-                background: linear-gradient(to right, #f5af19,  #f58b19)
+                background: #396afc
+                background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#396afc))
+                background: linear-gradient(to right, #b162e2, #396afc)
                 
             &:nth-child(2)
-                background: #f12711
-                background: -webkit-linear-gradient(to right, #f58b19, #f12711)
-                background: linear-gradient(to right, #f58b19, #f12711)
+                background: #396afc
+                background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#396afc))
+                background: linear-gradient(to right, #b162e2, #396afc)
 
             &:nth-child(3)
-                background: #f85032
-                background: -webkit-linear-gradient(to right,#f12711, #f85032)
-                background: linear-gradient(to right,#f12711, #f85032)
+                background: #396afc
+                background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#396afc))
+                background: linear-gradient(to right, #b162e2, #396afc)
 
 #section-2
     padding: 15px 15vw
     padding-top: 30px
+    @media screen and (max-width: 768px)
+        padding: 15px 7vw
+        
     #description
         display: flex
         @media screen and (max-width: 768px)
@@ -133,21 +150,21 @@ header
         a  
             &:first-child
                 div
-                    background: #E44D26
-                    background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
-                    background: linear-gradient(to right, #f5af19,  #f58b19)
+                    background: #396afc
+                    background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#814fd6))
+                    background: linear-gradient(to right,#b162e2, #814fd6)
                 
             &:nth-child(2)
                 div
-                    background: #f12711
-                    background: -webkit-linear-gradient(to right, #f58b19, #f12711)
-                    background: linear-gradient(to right, #f58b19, #f12711)
+                    background: #396afc
+                    background: -webkit-gradient(linear, left top, right top, from( #814fd6), to(#396afc))
+                    background: linear-gradient(to right, #b162e2, #396afc)
 
             &:nth-child(3)
                 div
-                    background: #f85032
-                    background: -webkit-linear-gradient(to right,#f12711, #f85032)
-                    background: linear-gradient(to right,#f12711, #f85032)
+                    background: #396afc
+                    background: -webkit-gradient(linear, left top, right top, from(#396afc), to(#396afc))
+                    background: linear-gradient(to right, #396afc, #396afc)
     
     .figure-header
         margin-bottom: 30px
@@ -192,24 +209,49 @@ header
             @media screen and (min-width: 768px)
                 max-width: 317px
 
-#cart
+
+#darkscreen
     position: fixed
-    right: -13vw
+    left: 0    
     top: 0
     height: 100vh
-    width: 13vw
+    width: 100vw
+    background-color: #000000
+    z-index: 2
+    opacity: 0
+    pointer-events: none
+    transition: 0.3s
+    &.active
+        opacity: 0.3
+        pointer-events: auto
+        transition: 0.3s
+
+#cart
+    position: fixed
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%) scale(0.8)
+    transform: 
+    height: 80vh
+    border-radius: 30px
+    width: 60vw
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05)
     background: #ffffff
-    border-left: 1px solid #e3e4e6
-    padding-top: 65px
-    padding-left: 15px
+    padding: 15px
     box-sizing: border-box
-    transition: 0.5s
+    transition: 0.3s
+    z-index: 3
+    opacity: 0
+    pointer-events: none
+    #cart-header
+        font-size: 3em
     @media screen and ( max-width: 768px )
-        width: 100vw
-        right: -100vw
+        width: 90vw
     &.active-cart
-        right: 0
-        transition: 0.5s
+        transition: 0.3s
+        transform: translate(-50%, -50%) scale(1)
+        opacity: 1
+        pointer-events: auto
     #cart-btns
         display: flex
         justify-content: space-between
@@ -219,10 +261,13 @@ header
         box-sizing: border-box
         @media screen and ( max-width: 768px )
             #generate
-                position: static
-                background-color: red
+                position: absolute
+                left: 50%
+                bottom: 0
+                transform: translateX(-50%)
                 user-select: none
-                width: 100%
+                width: 30%
+                user-select: none
                 display: block
                 text-align: center
                 box-sizing: border-box
@@ -230,42 +275,25 @@ header
                 padding: 7px 15px
                 box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
                 border-radius: 30px
-                background: #E44D26
-                background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
-                background: linear-gradient(to right, #f5af19,  #f58b19)
-            #closecartbtn
-                background-color: red
-                user-select: none
-                width: 100%
-                margin-right: 100px
-                display: block
-                text-align: center
-                box-sizing: border-box
-                color: #ffffff
-                padding: 7px 15px
-                box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
-                border-radius: 30px
-                background: #E44D26
-                background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
-                background: linear-gradient(to right, #f5af19,  #f58b19)
+                background: #396afc
+                background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#396afc))
+                background: linear-gradient(to right, #b162e2, #396afc)
     #generate
         position: absolute
-        
-        bottom: 15px
-        background-color: red
-        user-select: none
         left: 50%
-        width: 90%
+        bottom: 0
         transform: translateX(-50%)
+        user-select: none
+        width: 130px
         text-align: center
         box-sizing: border-box
         color: #ffffff
         padding: 7px 15px
         box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
         border-radius: 30px
-        background: #E44D26
-        background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
-        background: linear-gradient(to right, #f5af19,  #f58b19)
+        background: #396afc
+        background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#396afc))
+        background: linear-gradient(to right, #b162e2, #396afc)
     #closecart
         background-color: red
         user-select: none
@@ -276,9 +304,6 @@ header
         padding: 7px 15px
         box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
         border-radius: 30px
-        background: #E44D26
-        background: -webkit-linear-gradient(to right, #ffc13a,  #f58b19)
-        background: linear-gradient(to right, #f5af19,  #f58b19)
 ::-webkit-scrollbar
     width: 6px
     background-color: #cecece
