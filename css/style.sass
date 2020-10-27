@@ -25,7 +25,7 @@ header
     box-sizing: border-box
     padding: 15px 15vw
     user-select: none
-    border-bottom: 1px solid #e3e4e6
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
     background: #ffffff
     z-index: 1
     @media screen and ( max-width: 768px )
@@ -55,12 +55,12 @@ header
                 display: none
             li
                 margin-right: 30px
+                cursor: pointer
                 &#cartbtn
                     display: block
 
 #section-1
     background: #ffffff
-    border-bottom: 1px solid #e3e4e6
     padding: 15px 15vw
     user-select: none
     @media screen and ( max-width: 768px )
@@ -168,15 +168,20 @@ header
     
     .figure-header
         margin-bottom: 30px
-    #select-heroes
+        user-select: none
+    figure
         .block
             position: relative
             transition: 0.1s
             user-select: none
             cursor: pointer
+            &.selected
+                box-shadow: 0px 0px 10px 5px rgba(73, 0, 245, 0.15)
+                opacity: 0.7
             input
                 cursor: pointer
                 pointer-events: none
+                opacity: 0
             &:active
                 transform: scale(1.05)
                 transition: 0.1s
@@ -226,6 +231,51 @@ header
         pointer-events: auto
         transition: 0.3s
 
+
+#navpanel
+    position: fixed
+    left: 15px
+    top: 50%
+    transform: translateY(-50%) translateX(-10px) scale(0.9)
+    background: #ffffff
+    padding: 15px
+    border-radius: 30px
+    box-shadow: none
+    opacity: 0
+    transition: 0.3s
+    &.active
+        ul
+            li
+                pointer-events: auto
+    ul
+        list-style: none
+        user-select: none
+        li  
+            margin-bottom: 15px
+            transition: 0.3s
+            transform: translateX(-7px) scale(0.9)
+            cursor: pointer
+            pointer-events: none
+            &:last-child
+                margin-bottom: 0
+            &.active
+                background: #396afc
+                background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#396afc))
+                background: linear-gradient(to right, #b162e2, #396afc)
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                transition: 0.3s
+                transform: translateX(0) scale(1)
+                pointer-events: auto
+
+    &.active
+        opacity: 1
+        transition: 0.3s
+        transform: translateY(-50%) translateX(0) scale(1)
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
+
+
+
 #cart
     position: fixed
     left: 50%
@@ -243,6 +293,12 @@ header
     z-index: 3
     opacity: 0
     pointer-events: none
+    #closecartbtn
+        position: absolute
+        top: 15px
+        right: 15px
+        cursor: pointer
+        font-size: 1.2em
     #cart-header
         font-size: 3em
     @media screen and ( max-width: 768px )

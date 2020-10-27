@@ -6,10 +6,12 @@ let blockcounter = 0
 let heroesplace = document.getElementById("heroes-place")
 let opencartbtn = document.getElementsByClassName('opencart')
 let cartOpened = false
-
 let closecartbtn = document.getElementById("closecartbtn")
 
 document.getElementById('darkscreen').addEventListener('click', ()=>{
+    openCart()
+})
+document.getElementById('closecartbtn').addEventListener('click', ()=>{
     openCart()
 })
 function openCart(){
@@ -17,11 +19,13 @@ function openCart(){
         cart.classList.add("active-cart")
         document.getElementById('darkscreen').classList.add('active')
         cartOpened = !cartOpened
+        document.body.style.overflowY = 'hidden'
     }
     else{
         cart.classList.remove("active-cart")
         document.getElementById('darkscreen').classList.remove('active')
         cartOpened = !cartOpened
+        document.body.style.overflowY = 'scroll'
     }
 }
 
@@ -42,17 +46,14 @@ for(let block of heroes_blocks){
         console.log(block.dataset.hero)
         let checkbox = block.querySelector("input")
         if(!checkbox.checked){
+            block.classList.add('selected')
             checkbox.checked = true
             selectedblocks[block.dataset.hero] = 1
             console.log(checkbox.checked)
-          /*  cart.querySelector("p").innerHTML=""
-            for(let i = 0;i<selectedblocks.length; ++i){
-                cart.querySelector("p").insertAdjacentHTML("beforeend", selectedblocks[i])
-                cart.querySelector("p").insertAdjacentHTML("beforeend", " ")
-             } */
             ++blockcounter
         }
         else{
+            block.classList.remove('selected')
             checkbox.checked = false
             selectedblocks[block.dataset.hero] = 0
             console.log(checkbox.checked)
