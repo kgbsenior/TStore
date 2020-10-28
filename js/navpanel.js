@@ -1,14 +1,21 @@
 window.addEventListener("scroll", navPanel)
-let pageHeader = document.getElementById("navpanel")
+let navpanel = document.getElementById("navpanel")
+let pageHeader = document.getElementsByTagName('header')
 function navPanel(){
-    console.log(pageYOffset)
+    var scrollPos = window.scrollY || window.scollTop || document.getElementsByTagName("html")[0].scrollTop
+    if(pageYOffset>10){
+        pageHeader[0].classList.add("active")
+    }
+    else{
+        pageHeader[0].classList.remove("active")
+    }
 
 
     if(pageYOffset>300){
-        pageHeader.classList.add("active")
+        navpanel.classList.add("active")
     }
     else{
-        pageHeader.classList.remove("active")
+        navpanel.classList.remove("active")
     }
 
 

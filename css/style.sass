@@ -25,9 +25,12 @@ header
     box-sizing: border-box
     padding: 15px 15vw
     user-select: none
-    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
     background: #ffffff
     z-index: 1
+    transition: 0.3s
+    &.active
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
+        transition: 0.3s
     @media screen and ( max-width: 768px )
         padding: 15px 7vw
     nav
@@ -47,6 +50,22 @@ header
             -webkit-text-fill-color: transparent
             font-size: 1.3em
         ul
+            .opencart
+                position: relative
+                span
+                    background: #396afc
+                    position: absolute
+                    right: -10px
+                    top: -10px
+                    border-radius: 50%
+                    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25)
+                    padding: 3px
+                    height: 10px
+                    width: 10px
+                    font-size: 7px
+                    font-weight: bold
+                    text-align: center
+                    color: #ffffff
             display: flex
             list-style: none
             i
@@ -62,6 +81,7 @@ header
 #section-1
     background: #ffffff
     padding: 15px 15vw
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05)
     user-select: none
     @media screen and ( max-width: 768px )
         padding: 15px 7vw
@@ -176,12 +196,8 @@ header
             user-select: none
             cursor: pointer
             &.selected
-                box-shadow: 0px 0px 10px 5px rgba(73, 0, 245, 0.15)
-                opacity: 0.7
-            input
-                cursor: pointer
-                pointer-events: none
-                opacity: 0
+                box-shadow: 0px 0px 10px 5px rgba(0, 74, 245, 0.15)
+                background: #9aabff
             &:active
                 transform: scale(1.05)
                 transition: 0.1s
@@ -192,12 +208,6 @@ header
                 object-fit: cover
                 border-radius: 10px
                 filter: brightness(0.9)
-            input
-                position: absolute
-                left: 25px
-                top: 25px
-                width: 15px
-                height: 15px
     figure
         display: grid
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
@@ -243,6 +253,8 @@ header
     box-shadow: none
     opacity: 0
     transition: 0.3s
+    @media screen and ( max-width: 768px )
+        display: none
     &.active
         ul
             li
@@ -295,9 +307,10 @@ header
     pointer-events: none
     #closecartbtn
         position: absolute
-        top: 15px
-        right: 15px
+        top: 20px
+        right: 20px
         cursor: pointer
+        color: #fc7268
         font-size: 1.2em
     #cart-header
         font-size: 3em
@@ -361,7 +374,7 @@ header
         box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
         border-radius: 30px
 ::-webkit-scrollbar
-    width: 6px
+    width: 5px
     background-color: #cecece
 
 ::-webkit-scrollbar-thumb
