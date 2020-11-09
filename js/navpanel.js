@@ -2,7 +2,6 @@ window.addEventListener("scroll", navPanel)
 let navpanel = document.getElementById("navpanel")
 let pageHeader = document.getElementsByTagName('header')
 function navPanel(){
-    var scrollPos = window.scrollY || window.scollTop || document.getElementsByTagName("html")[0].scrollTop
     if(pageYOffset>10){
         pageHeader[0].classList.add("active")
     }
@@ -19,7 +18,7 @@ function navPanel(){
     }
 
 
-    if(pageYOffset>300&pageYOffset<1200){
+    if(getCoords('beginningheader')>=0&getCoords('beginningheader')>=-180&getCoords('beginningheader')<80){
         document.getElementById('navpan1').classList.add('active')
         document.getElementById('navpan2').classList.remove('active')
         document.getElementById('navpan3').classList.remove('active')
@@ -28,7 +27,7 @@ function navPanel(){
         document.getElementById('navpan6').classList.remove('active')
         document.getElementById('navpan7').classList.remove('active')
     }
-    else if(pageYOffset>1200&pageYOffset<2000){
+    else if(getCoords('placeheader')>=0&getCoords('placeheader')>=-180&getCoords('placeheader')<80){
         document.getElementById('navpan1').classList.remove('active')
         document.getElementById('navpan2').classList.add('active')
         document.getElementById('navpan3').classList.remove('active')
@@ -37,16 +36,16 @@ function navPanel(){
         document.getElementById('navpan6').classList.remove('active')
         document.getElementById('navpan7').classList.remove('active')
     }
-    else if(pageYOffset>2000&pageYOffset<3000){
-        document.getElementById('navpan3').classList.add('active')
+    else if(getCoords('heroesheader')>=0&getCoords('heroesheader')>=-180&getCoords('heroesheader')<80){
         document.getElementById('navpan1').classList.remove('active')
         document.getElementById('navpan2').classList.remove('active')
+        document.getElementById('navpan3').classList.add('active')
         document.getElementById('navpan4').classList.remove('active')
         document.getElementById('navpan5').classList.remove('active')
         document.getElementById('navpan6').classList.remove('active')
         document.getElementById('navpan7').classList.remove('active')
     }
-    else if(pageYOffset>3000&pageYOffset<3900){
+    else if(getCoords('phrasesheader')>=0&getCoords('phrasesheader')>=-180&getCoords('phrasesheader')<80){
         document.getElementById('navpan1').classList.remove('active')
         document.getElementById('navpan2').classList.remove('active')
         document.getElementById('navpan3').classList.remove('active')
@@ -55,7 +54,7 @@ function navPanel(){
         document.getElementById('navpan6').classList.remove('active')
         document.getElementById('navpan7').classList.remove('active')
     }
-    else if(pageYOffset>3900&pageYOffset<4800){
+    else if(getCoords('magicheader')>=0&getCoords('magicheader')>=-180&getCoords('magicheader')<80){
         document.getElementById('navpan1').classList.remove('active')
         document.getElementById('navpan2').classList.remove('active')
         document.getElementById('navpan3').classList.remove('active')
@@ -64,7 +63,7 @@ function navPanel(){
         document.getElementById('navpan6').classList.remove('active')
         document.getElementById('navpan7').classList.remove('active')
     }
-    else if(pageYOffset>4800&pageYOffset<5700){
+    else if(getCoords('householdheader')>=0&getCoords('householdheader')>=-180&getCoords('householdheader')<80){
         document.getElementById('navpan1').classList.remove('active')
         document.getElementById('navpan2').classList.remove('active')
         document.getElementById('navpan3').classList.remove('active')
@@ -73,7 +72,8 @@ function navPanel(){
         document.getElementById('navpan6').classList.add('active')
         document.getElementById('navpan7').classList.remove('active')
     }
-    else if(pageYOffset>5700){
+
+    else if(getCoords('endingheader')>=0&getCoords('endingheader')>=-180&getCoords('endingheader')<80){
         document.getElementById('navpan1').classList.remove('active')
         document.getElementById('navpan2').classList.remove('active')
         document.getElementById('navpan3').classList.remove('active')
@@ -82,4 +82,13 @@ function navPanel(){
         document.getElementById('navpan6').classList.remove('active')
         document.getElementById('navpan7').classList.add('active')
     }
+}
+
+
+
+
+
+function getCoords(elem){
+    var box = document.getElementById(elem).getBoundingClientRect()
+    return box.top
 }
