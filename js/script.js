@@ -89,7 +89,7 @@ outputData("ending", endingplace, "select-ending")
 
 function outputData(datakey, place, selectid){
     for(let i = 0; i<data[datakey].length; ++i){
-        place.insertAdjacentHTML('beforeend', '<article class="block" data-contentid="'+i+'"'+'data-contentkey="'+datakey+'"'+'>'+data[datakey][i]+'</article>')
+        place.insertAdjacentHTML('beforeend', '<article class="block" data-contentid="'+i+'"'+'data-selected="0" data-datakey="'+datakey+'" data-contenttext="'+data[datakey][i]+'" data-contentkey="'+datakey+'"'+'>'+data[datakey][i]+'</article>')
     }
     configBlocks(document.getElementById(selectid).querySelectorAll('.block'))
 }
@@ -119,7 +119,7 @@ let ending_blocks_limit = document.getElementById("select-ending").querySelector
 
 
 
-let all_blocks = document.getElementsByClassName('contentblock')
+let all_blocks = document.getElementsByClassName('block')
 
 
 
@@ -177,11 +177,13 @@ function configBlocks(blocks){
             console.log(block.dataset.contentid)
             let contentId = parseInt(block.dataset.contentid)
             let contentkey = block.dataset.contentkey
+            
             function checkBlock(selected, limit, selectid, datakey){
                 if(selected<limit){
                     if(!block.classList.contains('selected')){
                         block.classList.add('selected')
                         selectedblocks[block.dataset.contentid] = 1
+                        block.dataset.selected = 1
                         ++selected
                         if(selected==limit){
                             lockBlocks(document.getElementById(selectid).querySelectorAll(".block"),0, data[datakey].length-1)
@@ -191,7 +193,7 @@ function configBlocks(blocks){
                         --selected
                         block.classList.remove('selected')
                         selectedblocks[block.dataset.contentid] = 0
-
+                        block.dataset.selected = 0
                         unlockBlocks(document.getElementById(selectid).querySelectorAll(".block"),0, data[datakey].length-1)
                     }
                 }
@@ -200,6 +202,7 @@ function configBlocks(blocks){
                         --selected
                         block.classList.remove('selected')
                         selectedblocks[block.dataset.contentid] = 0
+                        block.dataset.selected = 0
                         unlockBlocks(document.getElementById(selectid).querySelectorAll(".block"),0, data[datakey].length-1)
                     }
                 }
