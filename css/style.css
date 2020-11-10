@@ -217,12 +217,15 @@ header nav ul li#cartbtn {
 
 #section-1 #description .description-block {
   padding: 7px 15px;
-  -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
   margin-right: 10px;
   margin-top: -40px;
   color: #ffffff;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -775,6 +778,23 @@ footer nav ul li#cartbtn {
   -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
+}
+
+#checkmysterious {
+  background: #396afc;
+  background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#396afc));
+  background: linear-gradient(to right, #b162e2, #396afc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 16px;
+}
+
+.langselected {
+  opacity: 0.7;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 ::-webkit-scrollbar {

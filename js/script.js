@@ -8,75 +8,6 @@ let endingplace =  document.getElementById("select-ending")
 
 
 
-var data = {
-    beginnings: 
-    [
-        "Once upon a time there was…",
-        "One fine summer's day…",
-        "Long years ago, there lived …who…",
-        "Once upon a time, and a very good time it was, though it wasn't in my time, nor in your time, nor anyone else's time…",
-        "It chanced that once upon a time long years ago, in the days when strange things used to happen in the world…",
-        "A girl once went",
-        "There once lived a … and a … as many a one has been.",
-        "A lad named … was once so unhappy…",
-        "Near a pixy field in the neighbourhood of Dartmoor, there lived, on a time …",
-        "This, O my Best Beloved, is a story—a new and a wonderful story—a story quite different from the other stories…",
-        "Long before Arthur and the Knights of the Round Table…",
-        "There was once a man who…",
-        "In the days of the great King Arthur there lived…",
-        "Once upon a time when pigs spoke",
-        "rhyme…"
-    ],
-    places:
-    [
-        "Place1",
-        "Place2",
-        "Place3"
-    ],
-    heroes:
-    [
-        "Hero1",
-        "Hero2",
-        "Hero3"
-    ],
-    phrases:
-    [
-        "Phrase1",
-        "Phrase2",
-        "Phrase3",
-        "Phrase4",
-        "Phrase5"
-    ],
-    magic:
-    [
-        "Magic1",
-        "Magic2",
-        "Magic3",
-        "Magic4",
-        "Magic5"
-    ],
-    household:
-    [
-        "Household1",
-        "Household2",
-        "Household3",
-        "Household4",
-        "Household5"
-    ],
-    ending:
-    [
-        '…and they all lived happy and died happy, and never drank out of a dry cappy.',
-        '…and they lived happy ever afterwards.',
-        "… till the day of her death.",
-        "…and they all lived happy as could be ever afterwards.",
-        "And they were married, and he and she are living happy to this day for aught I know.",
-        "That's all",
-        "…and was never seen again.",
-        "And they lived happy all their days."   
-    ]
-
-  };
-
 outputData("beginnings", beginningplace, "select-beginning")
 outputData("places", placesplace, "select-place")
 outputData("heroes", heroesplace, "select-heroes")
@@ -240,4 +171,87 @@ function configBlocks(blocks){
             changeCart()
         })
     }   
+}
+
+
+
+
+
+
+let language = "eng"
+document.getElementById("englang").addEventListener('click', ()=>{
+    changeLanguage("eng")
+})
+
+document.getElementById("bellang").addEventListener('click', ()=>{
+    changeLanguage("bel")
+})
+
+function changeLanguage(a){
+    if(a == "eng" & language == "eng"){
+
+    }
+    else if(a == "bel" & language == "bel"){
+
+    }
+    else if(a == "bel" & language == "eng"){
+        document.getElementById("bellang").classList.add("langselected")
+        document.getElementById("englang").classList.remove("langselected")
+
+        language = "bel"
+        data = databel
+        beginningplace.innerHTML = ""
+        placesplace.innerHTML = ""
+        heroesplace.innerHTML = ""
+        phrasesplace.innerHTML = ""
+        magicplace.innerHTML = ""
+        householdplace.innerHTML = ""
+        endingplace.innerHTML = ""
+        selectedTotal = 0
+        selectedBeginnings = 0
+        selectedPlace = 0
+        selectedHeroes = 0
+        selectedPhrases = 0
+        selectedMagic = 0
+        selectedHousehold = 0
+        selectedEndings = 0
+        outputData("beginnings", beginningplace, "select-beginning")
+        outputData("places", placesplace, "select-place")
+        outputData("heroes", heroesplace, "select-heroes")
+        outputData("phrases", phrasesplace, "select-phrases")
+        outputData("magic", magicplace, "select-magic")
+        outputData("household", householdplace, "select-household")
+        outputData("ending", endingplace, "select-ending")
+        changeCart()
+    }
+    else if(a == "eng" & language == "bel"){
+        document.getElementById("bellang").classList.remove("langselected")
+        document.getElementById("englang").classList.add("langselected")
+
+        language = "eng"
+        data = dataeng
+        beginningplace.innerHTML = ""
+        placesplace.innerHTML = ""
+        heroesplace.innerHTML = ""
+        phrasesplace.innerHTML = ""
+        magicplace.innerHTML = ""
+        householdplace.innerHTML = ""
+        endingplace.innerHTML = ""
+        selectedTotal = 0
+        selectedBeginnings = 0
+        selectedPlace = 0
+        selectedHeroes = 0
+        selectedPhrases = 0
+        selectedMagic = 0
+        selectedHousehold = 0
+        selectedEndings = 0
+        outputData("beginnings", beginningplace, "select-beginning")
+        outputData("places", placesplace, "select-place")
+        outputData("heroes", heroesplace, "select-heroes")
+        outputData("phrases", phrasesplace, "select-phrases")
+        outputData("magic", magicplace, "select-magic")
+        outputData("household", householdplace, "select-household")
+        outputData("ending", endingplace, "select-ending")
+        changeCart()
+    }
 }
