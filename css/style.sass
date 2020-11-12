@@ -3,22 +3,58 @@
     padding: 0
     font-family: "Open Sans", sans-serif
     scroll-behavior: smooth
+    -webkit-tap-highlight-color: transparent
 
 a
     text-decoration: none
     color: unset
-    -webkit-tap-highlight-color: transparent 
 
 body
     background: #f6f6f6
     padding-top: 53px
     position: relative
-    padding-bottom: 100px
+    padding-bottom: 200px
+    &.darkbody
+        background: #121212
+        header
+            background: #222222
+            color: #ffffff
+        footer
+            background: #222222
+            color: #ffffff  
+        #navpanel
+            color: #ffffff
+        #section-1
+            background: #222222
+            color: #ffffff
+            h1
+                color: #ffffff
+        #section-2
+            .block
+                color: #ffffff
+                background: #222222
+                &.selected
+                    background-color: #5d658d
+            h2
+                color: #ffffff
+        #cart
+            background: #222222
+            h2
+                color: #ffffff
+            #cart-field
+                background: #121212
+                color: #ffffff
+                h3
+                    color: #ffffff
+                figure
+                    background: #222222
+
 
 h1, h2, h3, h4, h5, h6
-    font-family: "Montserrat", sans-serif
-    font-weight: bold
+    font-family: "Open Sans", sans-serif
+    font-weight: 100
     color:#2e2e33
+
 
 header
     width: 100%
@@ -30,7 +66,6 @@ header
     user-select: none
     background: #ffffff
     z-index: 1
-    transition: 0.3s
     &.active
         box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
         transition: 0.3s
@@ -107,7 +142,7 @@ header
         div:last-child
             width: 50%
             text-align: right
-            font-weight: bold
+            font-weight: thin
             @media screen and ( max-width: 768px )
                 width: auto
                 text-align: left
@@ -126,7 +161,7 @@ header
             margin-right: 10px 
             margin-top: -40px
             color: #ffffff
-            cursor: pointer
+            cursor: pointer 
             @media screen and ( max-width: 768px)
                 width: 100%
                 box-sizing: border-box
@@ -164,32 +199,32 @@ header
             border-radius: 30px
             margin-right: 10px 
             margin-bottom: 30px
+            transition: 0.3s
             color: #ffffff
             display: block
+            cursor: pointer
+            img
+                margin-right: 5px
             @media screen and ( max-width: 768px)
                 width: 100%
                 box-sizing: border-box
                 padding: 15px 15px
                 border-radius: 15px
-                margin-bottom: 15px
-        a  
+                margin-bottom: 15p
             &:first-child
-                div
-                    background: #396afc
-                    background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#814fd6))
-                    background: linear-gradient(to right,#b162e2, #814fd6)
+                background: #396afc
+                background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#814fd6))
+                background: linear-gradient(to right,#b162e2, #814fd6)
                 
             &:nth-child(2)
-                div
-                    background: #396afc
-                    background: -webkit-gradient(linear, left top, right top, from( #814fd6), to(#396afc))
-                    background: linear-gradient(to right, #b162e2, #396afc)
+                background: #396afc
+                background: -webkit-gradient(linear, left top, right top, from( #814fd6), to(#396afc))
+                background: linear-gradient(to right, #b162e2, #396afc)
 
             &:nth-child(3)
-                div
-                    background: #396afc
-                    background: -webkit-gradient(linear, left top, right top, from(#396afc), to(#396afc))
-                    background: linear-gradient(to right, #396afc, #396afc)
+                background: #396afc
+                background: -webkit-gradient(linear, left top, right top, from(#396afc), to(#396afc))
+                background: linear-gradient(to right, #396afc, #396afc)
     
     .figure-header
         margin-bottom: 30px
@@ -205,7 +240,8 @@ header
                 transition: 0.3s
                 box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15)
             &.blocked
-                opacity: 0.7
+                opacity: 0.5
+                box-shadow: none
                 transition: 0.3s
             &.selected
                 box-shadow: 0px 0px 10px 5px rgba(0, 74, 245, 0.15)
@@ -235,6 +271,7 @@ header
 
 
 #darkscreen
+    will-change: opacity
     position: fixed
     left: 0    
     top: 0
@@ -256,7 +293,6 @@ header
     left: 15px
     top: 50%
     transform: translateY(-50%) translateX(-10px) scale(0.9)
-    background: #ffffff
     padding: 15px
     border-radius: 30px
     box-shadow: none
@@ -274,9 +310,10 @@ header
         li  
             margin-bottom: 15px
             transition: 0.3s
-            transform: translateX(-7px) scale(0.9)
+            transform: translateX(-7px) 
             cursor: pointer
             pointer-events: none
+            position: relative
             &:last-child
                 margin-bottom: 0
             &.active
@@ -286,14 +323,23 @@ header
                 -webkit-background-clip: text
                 -webkit-text-fill-color: transparent
                 transition: 0.3s
-                transform: translateX(0) scale(1)
+                transform: translateX(0)
                 pointer-events: auto
+                &:before
+                    content: ""
+                    position: absolute
+                    width: 5px
+                    height: 5px
+                    background: #b162e2
+                    border-radius: 50%
+                    left: -10px
+                    top: 50%
+                    transform: translateY(-50%)
 
     &.active
         opacity: 1
         transition: 0.3s
         transform: translateY(-50%) translateX(0) scale(1)
-        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
 
 footer
     width: 100%
@@ -305,7 +351,6 @@ footer
     user-select: none
     background: #ffffff
     z-index: 1
-    transition: 0.3s
     box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
     @media screen and ( max-width: 768px )
         padding: 15px 7vw
@@ -357,6 +402,7 @@ footer
 
 
 #cart
+    will-change: transform, opacity
     position: fixed
     left: 50%
     top: 50%
@@ -382,10 +428,11 @@ footer
         box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.15)
         figure
             background: #ffffff
-            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15)
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1)
             border-radius: 15px
             padding: 7px
             width: fit-content
+            will-change: transform, opacity
     img
         width: 30px
         display: flex
@@ -408,13 +455,13 @@ footer
         font-size: 3em
     @media screen and ( max-width: 768px )
         width: 100vw
-        height: 100vh
+        height: 100%
         border-radius: 0
     &.active-cart
         transition: 0.3s
-        transform: translate(-50%, -50%) scale(1) skewX(0) skewY(0)
         opacity: 1
         pointer-events: auto
+        transform: translate(-50%, -50%) scale(1) skewX(0) skewY(0)
     #cart-btns
         display: flex
         justify-content: space-between
@@ -468,6 +515,38 @@ footer
         box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1)
         border-radius: 30px
 
+
+#alert
+    position: fixed
+    bottom: -50px
+    opacity: 0
+    transition: 0.3s
+    left: 50%
+    transform: translateX(-50%)
+    border-radius: 15px
+    background-color: rgba(76, 76, 76, 0.9)
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15)
+    color: white
+    width: 30%
+    padding: 15px
+    box-sizing: border-box
+    z-index: 2
+    p
+        transition: 0.3s
+        animation: alertBlockText 0.3s linear
+        @keyframes alertBlockText
+            0%
+                opacity: 0
+            100%
+                opacity: 1
+    &.active
+        opacity: 1
+        bottom: 15px
+        transition: 0.3s
+    @media screen and (max-width: 768px)
+        width: 95%
+        
+
 #checkmysterious
     background: #396afc
     background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#396afc))
@@ -477,9 +556,11 @@ footer
     font-size: 16px
 
 .langselected
-    opacity: 0.7
-    transition: 0.3s
-    box-shadow: none
+    .description-block
+        box-shadow: none !important
+        opacity: 0.7
+        box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.5) !important
+        transition: 0.3s
 
 ::-webkit-scrollbar
     width: 0px

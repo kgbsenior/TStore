@@ -3,6 +3,7 @@ let placesplace = document.getElementById("select-place")
 let heroesplace = document.getElementById("select-heroes")
 let phrasesplace = document.getElementById("select-phrases")
 let magicplace = document.getElementById("select-magic")
+let magicobjectsplace = document.getElementById("select-magicobjects")
 let householdplace = document.getElementById("select-household")
 let endingplace =  document.getElementById("select-ending")
 
@@ -13,6 +14,7 @@ outputData("places", placesplace, "select-place")
 outputData("heroes", heroesplace, "select-heroes")
 outputData("phrases", phrasesplace, "select-phrases")
 outputData("magic", magicplace, "select-magic")
+outputData("magicobjects", magicobjectsplace, "select-magicobjects")
 outputData("household", householdplace, "select-household")
 outputData("ending", endingplace, "select-ending")
 
@@ -32,6 +34,7 @@ let place_blocks_limit = document.getElementById("select-place").querySelectorAl
 let heroes_blocks_limit = document.getElementById("select-heroes").querySelectorAll(".block").length-1
 let phrases_blocks_limit = document.getElementById("select-phrases").querySelectorAll(".block").length-1
 let magic_blocks_limit = document.getElementById("select-magic").querySelectorAll(".block").length-1
+let magicobjects_blocks_limit = document.getElementById("select-magicobjects").querySelectorAll(".block").length-1
 let household_blocks_limit = document.getElementById("select-household").querySelectorAll(".block").length-1
 let ending_blocks_limit = document.getElementById("select-ending").querySelectorAll(".block").length
 
@@ -66,6 +69,7 @@ let selectedPlace = 0
 let selectedHeroes = 0
 let selectedPhrases = 0
 let selectedMagic = 0
+let selectedMagicObjects = 0
 let selectedHousehold = 0
 let selectedEndings = 0
 
@@ -79,6 +83,7 @@ let limitPlace = 1
 let limitHeroes = 3
 let limitPhrases = 3
 let limitMagic = 3
+let limitMagicObjects = 2
 let limitHousehold = 3
 let limitEndings = 1
 
@@ -118,6 +123,7 @@ function configBlocks(blocks){
                         ++selected
                         if(selected==limit){
                             lockBlocks(document.getElementById(selectid).querySelectorAll(".block"),0, data[datakey].length-1)
+                            customalert("You have selected all cards in this category.")
                         }
                     }
                     else if(block.classList.contains('selected')){
@@ -135,6 +141,9 @@ function configBlocks(blocks){
                         selectedblocks[block.dataset.contentid] = 0
                         block.dataset.selected = 0
                         unlockBlocks(document.getElementById(selectid).querySelectorAll(".block"),0, data[datakey].length-1)
+                    }
+                    else{
+                        customalert("Try another category.")
                     }
                 }
                 return selected
@@ -154,6 +163,9 @@ function configBlocks(blocks){
                 break;
                 case "magic":
                     selectedMagic = checkBlock(selectedMagic, limitMagic, "select-magic", "magic")
+                break;
+                case "magicobjects":
+                    selectedMagicObjects = checkBlock(selectedMagicObjects, limitMagicObjects, "select-magicobjects", "magicobjects")
                 break;
                 case "household":
                     selectedHousehold = checkBlock(selectedHousehold, limitHousehold, "select-household", "household")
@@ -220,6 +232,7 @@ function changeLanguage(a){
         outputData("heroes", heroesplace, "select-heroes")
         outputData("phrases", phrasesplace, "select-phrases")
         outputData("magic", magicplace, "select-magic")
+        outputData("magicobjects", magicobjectsplace, "select-magicobjects")
         outputData("household", householdplace, "select-household")
         outputData("ending", endingplace, "select-ending")
         changeCart()
@@ -250,6 +263,7 @@ function changeLanguage(a){
         outputData("heroes", heroesplace, "select-heroes")
         outputData("phrases", phrasesplace, "select-phrases")
         outputData("magic", magicplace, "select-magic")
+        outputData("magicobjects", magicobjectsplace, "select-magicobjects")
         outputData("household", householdplace, "select-household")
         outputData("ending", endingplace, "select-ending")
         changeCart()

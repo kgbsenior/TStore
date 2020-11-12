@@ -132,6 +132,11 @@ var dataeng = {
         "Orcs",
         "Gooseberry`s wife"
     ],
+    magicobjects:
+    [
+        'gg',
+        'gg'
+    ],
     household:
     [
         "Spinning wheel",
@@ -298,6 +303,11 @@ var dataeng = {
         "Hobii",
         "Orcs",
         "Gooseberry`s wife"
+    ],
+    magicobjects:
+    [
+        'gg',
+        'gg'
     ],
     household:
     [

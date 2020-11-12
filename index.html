@@ -23,11 +23,10 @@
                     <a href="index.html">Fairy Tale Store</a>
                 </figcaption>
             </figure>
-            <i class="fas fa-shopping-cart opencart" id="cartbtn"><span class="cartcounter">0</span></i>
+                <i class="fas fa-shopping-cart opencart" id="cartbtn"><span class="cartcounter">0</span></i>
             <ul>
-                <li><i class="fas fa-home"></i>Home</li>
+                <li id="theme-switcher"><i class="fas fa-sun"></i>Dark</li>
                 <li><i class="fas fa-envelope"></i>Contacts</li>
-                <li><i class="fas fa-question"></i>About</li>
                 <li class="opencart"><i class="fas fa-shopping-cart"></i></i>Cart<span class="cartcounter">0</span></li>
             </ul>
         </nav>
@@ -46,7 +45,7 @@
                     story and here we go…
                 </div>
                 <div>
-                    Fairy tales are contagious.
+                    "Fairy tales are contagious.
                     <br>
                     They are passed from person to person,
                     <br>
@@ -54,16 +53,16 @@
                     <br>
                     A fairy tale unites us with those
                     <br>
-                    Who lived in this world long before us.
+                    Who lived in this world long before us."
                     <br>
-                    Neil Gaiman
+                    <b>- © Neil Gaiman</b>
                 </div>
             </span>
         </section>
         <section id="section-2">
             <article id="description">
-                <a id="englang" class="langselected" ><div class="description-block" id="selheroeslink">English</div></a>
-                <a id="bellang" ><div class="description-block">Belarus</div></a>
+                <div id="englang" class="description-block selectedlang" id="selheroeslink"><img src="img/uk.png" alt="0" width="15px" height="10px">English</div>
+                <div id="bellang" class="description-block"><img src="img/bel.png" alt="0" width="15px" height="10px">Belarusian</div>
             </article>
             <h2 class="figure-header" id="beginningheader">Choose the beginning</h2>
             <figure id="select-beginning">
@@ -81,7 +80,11 @@
             <figure id="select-phrases">
                 
             </figure>
-            <h2 class="figure-header" id="magicheader">Magic objects/helpers <a id="checkmysterious" href="https://mysteriouscreatures.github.io/index.html" target="_blank">(Check our website)</a></h2>
+            <h2 class="figure-header" id="magicobjectsheader">Magic objects</h2>
+            <figure id="select-magicobjects">
+                
+            </figure>
+            <h2 class="figure-header" id="magicheader">Magic helpers <a id="checkmysterious" href="https://mysteriouscreatures.github.io/index.html" target="_blank">(Check our website)</a></h2>
             <figure id="select-magic">
                 
             </figure>
@@ -99,6 +102,7 @@
         </section>
     </main>
     <footer>
+        <div>sadasdasdasdasd</div> 
         <nav>
             <figure>
                 <figcaption>
@@ -117,8 +121,9 @@
             <li id="navpan3">Heroes</li>
             <li id="navpan4">Useful phrases</li>
             <li id="navpan5">Magic objects</li>
-            <li id="navpan6">Household tools</li>
-            <li id="navpan7">Ending</li>
+            <li id="navpan6">Magic helpers</li>
+            <li id="navpan7">Household tools</li>
+            <li id="navpan8">Ending</li>
         </ul>
     </div>
     <div id="darkscreen"></div>
@@ -146,10 +151,15 @@
             <div id="generate">Generate!</div>
         </div>
     </div>
+    <div id="alert">
+        ss
+    </div>
     <script src="js/database.js?v=1.1"></script>
     <script src="js/script.js?v=1.1"></script>
     <script src="js/navpanel.js?v=1.1"></script>
     <script src="js/cart.js?v=1.1"></script>
+    <script src="js/customalert.js?v=1.1"></script>
+    <script src="js/darktheme.js?v=1.1"></script>
 </body>
 
 </html>

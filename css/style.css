@@ -3,24 +3,85 @@
   padding: 0;
   font-family: "Open Sans", sans-serif;
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
   text-decoration: none;
   color: unset;
-  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   background: #f6f6f6;
   padding-top: 53px;
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
+}
+
+body.darkbody {
+  background: #121212;
+}
+
+body.darkbody header {
+  background: #222222;
+  color: #ffffff;
+}
+
+body.darkbody footer {
+  background: #222222;
+  color: #ffffff;
+}
+
+body.darkbody #navpanel {
+  color: #ffffff;
+}
+
+body.darkbody #section-1 {
+  background: #222222;
+  color: #ffffff;
+}
+
+body.darkbody #section-1 h1 {
+  color: #ffffff;
+}
+
+body.darkbody #section-2 .block {
+  color: #ffffff;
+  background: #222222;
+}
+
+body.darkbody #section-2 .block.selected {
+  background-color: #5d658d;
+}
+
+body.darkbody #section-2 h2 {
+  color: #ffffff;
+}
+
+body.darkbody #cart {
+  background: #222222;
+}
+
+body.darkbody #cart h2 {
+  color: #ffffff;
+}
+
+body.darkbody #cart #cart-field {
+  background: #121212;
+  color: #ffffff;
+}
+
+body.darkbody #cart #cart-field h3 {
+  color: #ffffff;
+}
+
+body.darkbody #cart #cart-field figure {
+  background: #222222;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
   color: #2e2e33;
 }
 
@@ -38,8 +99,6 @@ header {
           user-select: none;
   background: #ffffff;
   z-index: 1;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 header.active {
@@ -188,7 +247,7 @@ header nav ul li#cartbtn {
 #section-1 span div:last-child {
   width: 50%;
   text-align: right;
-  font-weight: bold;
+  font-weight: thin;
 }
 
 @media screen and (max-width: 768px) {
@@ -290,8 +349,15 @@ header nav ul li#cartbtn {
   border-radius: 30px;
   margin-right: 10px;
   margin-bottom: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   color: #ffffff;
   display: block;
+  cursor: pointer;
+}
+
+#section-2 #description .description-block img {
+  margin-right: 5px;
 }
 
 @media screen and (max-width: 768px) {
@@ -301,23 +367,23 @@ header nav ul li#cartbtn {
             box-sizing: border-box;
     padding: 15px 15px;
     border-radius: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 15p;
   }
 }
 
-#section-2 #description a:first-child div {
+#section-2 #description .description-block:first-child {
   background: #396afc;
   background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#814fd6));
   background: linear-gradient(to right, #b162e2, #814fd6);
 }
 
-#section-2 #description a:nth-child(2) div {
+#section-2 #description .description-block:nth-child(2) {
   background: #396afc;
   background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#396afc));
   background: linear-gradient(to right, #b162e2, #396afc);
 }
 
-#section-2 #description a:nth-child(3) div {
+#section-2 #description .description-block:nth-child(3) {
   background: #396afc;
   background: -webkit-gradient(linear, left top, right top, from(#396afc), to(#396afc));
   background: linear-gradient(to right, #396afc, #396afc);
@@ -352,7 +418,9 @@ header nav ul li#cartbtn {
 }
 
 #section-2 figure .block.blocked {
-  opacity: 0.7;
+  opacity: 0.5;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -405,6 +473,7 @@ header nav ul li#cartbtn {
 }
 
 #darkscreen {
+  will-change: opacity;
   position: fixed;
   left: 0;
   top: 0;
@@ -431,7 +500,6 @@ header nav ul li#cartbtn {
   top: 50%;
   -webkit-transform: translateY(-50%) translateX(-10px) scale(0.9);
           transform: translateY(-50%) translateX(-10px) scale(0.9);
-  background: #ffffff;
   padding: 15px;
   border-radius: 30px;
   -webkit-box-shadow: none;
@@ -463,10 +531,11 @@ header nav ul li#cartbtn {
   margin-bottom: 15px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-transform: translateX(-7px) scale(0.9);
-          transform: translateX(-7px) scale(0.9);
+  -webkit-transform: translateX(-7px);
+          transform: translateX(-7px);
   cursor: pointer;
   pointer-events: none;
+  position: relative;
 }
 
 #navpanel ul li:last-child {
@@ -481,9 +550,22 @@ header nav ul li#cartbtn {
   -webkit-text-fill-color: transparent;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-transform: translateX(0) scale(1);
-          transform: translateX(0) scale(1);
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
   pointer-events: auto;
+}
+
+#navpanel ul li.active:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #b162e2;
+  border-radius: 50%;
+  left: -10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 #navpanel.active {
@@ -492,8 +574,6 @@ header nav ul li#cartbtn {
   transition: 0.3s;
   -webkit-transform: translateY(-50%) translateX(0) scale(1);
           transform: translateY(-50%) translateX(0) scale(1);
-  -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -510,8 +590,6 @@ footer {
           user-select: none;
   background: #ffffff;
   z-index: 1;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
 }
@@ -602,6 +680,7 @@ footer nav ul li#cartbtn {
 }
 
 #cart {
+  will-change: transform, opacity;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -635,13 +714,14 @@ footer nav ul li#cartbtn {
 
 #cart #cart-field figure {
   background: #ffffff;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   padding: 7px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  will-change: transform, opacity;
 }
 
 #cart img {
@@ -683,7 +763,7 @@ footer nav ul li#cartbtn {
 @media screen and (max-width: 768px) {
   #cart {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     border-radius: 0;
   }
 }
@@ -691,10 +771,10 @@ footer nav ul li#cartbtn {
 #cart.active-cart {
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-transform: translate(-50%, -50%) scale(1) skewX(0) skewY(0);
-          transform: translate(-50%, -50%) scale(1) skewX(0) skewY(0);
   opacity: 1;
   pointer-events: auto;
+  -webkit-transform: translate(-50%, -50%) scale(1) skewX(0) skewY(0);
+          transform: translate(-50%, -50%) scale(1) skewX(0) skewY(0);
 }
 
 #cart #cart-btns {
@@ -780,6 +860,65 @@ footer nav ul li#cartbtn {
   border-radius: 30px;
 }
 
+#alert {
+  position: fixed;
+  bottom: -50px;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 15px;
+  background-color: rgba(76, 76, 76, 0.9);
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+  color: white;
+  width: 30%;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 2;
+}
+
+#alert p {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-animation: alertBlockText 0.3s linear;
+          animation: alertBlockText 0.3s linear;
+}
+
+@-webkit-keyframes alertBlockText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes alertBlockText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#alert.active {
+  opacity: 1;
+  bottom: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  #alert {
+    width: 95%;
+  }
+}
+
 #checkmysterious {
   background: #396afc;
   background: -webkit-gradient(linear, left top, right top, from(#b162e2), to(#396afc));
@@ -789,12 +928,14 @@ footer nav ul li#cartbtn {
   font-size: 16px;
 }
 
-.langselected {
+.langselected .description-block {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
   opacity: 0.7;
+  -webkit-box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, 0.5) !important;
+          box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, 0.5) !important;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-box-shadow: none;
-          box-shadow: none;
 }
 
 ::-webkit-scrollbar {
