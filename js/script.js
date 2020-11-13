@@ -9,22 +9,24 @@ let endingplace =  document.getElementById("select-ending")
 
 
 
-outputData("beginnings", beginningplace, "select-beginning")
-outputData("places", placesplace, "select-place")
-outputData("heroes", heroesplace, "select-heroes")
-outputData("phrases", phrasesplace, "select-phrases")
-outputData("magic", magicplace, "select-magic")
-outputData("magicobjects", magicobjectsplace, "select-magicobjects")
-outputData("household", householdplace, "select-household")
-outputData("ending", endingplace, "select-ending")
+outputallData()
 
+function outputallData(){
+    outputData("beginnings", beginningplace)
+    outputData("places", placesplace)
+    outputData("heroes", heroesplace)
+    outputData("phrases", phrasesplace)
+    outputData("magic", magicplace)
+    outputData("magicobjects", magicobjectsplace)
+    outputData("household", householdplace)
+    outputData("ending", endingplace)
+}
 
-
-function outputData(datakey, place, selectid){
+function outputData(datakey, place){
     for(let i = 0; i<data[datakey].length; ++i){
         place.insertAdjacentHTML('beforeend', '<article class="block" data-contentid="'+i+'"'+'data-selected="0" data-datakey="'+datakey+'" data-contenttext="'+data[datakey][i]+'" data-contentkey="'+datakey+'"'+'>'+data[datakey][i]+'</article>')
     }
-    configBlocks(document.getElementById(selectid).querySelectorAll('.block'))
+    configBlocks(place.querySelectorAll('.block'))
 }
 
 
@@ -200,16 +202,9 @@ document.getElementById("bellang").addEventListener('click', ()=>{
 })
 
 function changeLanguage(a){
-    if(a == "eng" & language == "eng"){
-
-    }
-    else if(a == "bel" & language == "bel"){
-
-    }
-    else if(a == "bel" & language == "eng"){
+    if(a == "bel" & language == "eng"){
         document.getElementById("bellang").classList.add("langselected")
         document.getElementById("englang").classList.remove("langselected")
-
         language = "bel"
         data = databel
         resetCards()
@@ -217,7 +212,6 @@ function changeLanguage(a){
     else if(a == "eng" & language == "bel"){
         document.getElementById("bellang").classList.remove("langselected")
         document.getElementById("englang").classList.add("langselected")
-
         language = "eng"
         data = dataeng
         resetCards()
@@ -241,13 +235,6 @@ function resetCards(){
     selectedMagic = 0
     selectedHousehold = 0
     selectedEndings = 0
-    outputData("beginnings", beginningplace, "select-beginning")
-    outputData("places", placesplace, "select-place")
-    outputData("heroes", heroesplace, "select-heroes")
-    outputData("phrases", phrasesplace, "select-phrases")
-    outputData("magic", magicplace, "select-magic")
-    outputData("magicobjects", magicobjectsplace, "select-magicobjects")
-    outputData("household", householdplace, "select-household")
-    outputData("ending", endingplace, "select-ending")
+    outputallData()
     changeCart()
 }

@@ -9,11 +9,6 @@ function customalert(a){
     let time = 3000
     if(!isAlertOn){
         alertBlock.classList.add('active')
-        alertBlock.addEventListener('click', ()=>{
-            alertBlock.classList.remove('active')
-            isAlertOn = false
-            clearTimeout(t)
-        })
         alertBlock.innerHTML = ""
         alertBlock.insertAdjacentHTML('beforeend', `<p>`+a+`</p>`)
         isAlertOn = true
@@ -23,8 +18,6 @@ function customalert(a){
         }, time)
     }
     else{
-        alertBlock.classList.remove('active')
-        isAlertOn = false
         clearTimeout(t)
         alertBlock.innerHTML = ""
         alertBlock.insertAdjacentHTML('beforeend', `<p>`+a+`</p>`)

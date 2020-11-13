@@ -50,6 +50,8 @@ body
                 color: #ffffff
             h1
                 color: #ffffff
+                text-align: center
+                font-size: 3em
         #cart
             background: #222222
             h2
@@ -180,12 +182,20 @@ header
     @media screen and ( max-width: 768px )
         padding: 15px 7vw
         height: auto
+        min-height: 100vh
         .container
             margin-top: 100px
             position: static
             transform: none !important
             flex-direction: column
             width: 100%
+            @media screen and ( min-height: 650px)
+                transform: translate(-50%, -50%) !important
+                width: 90vw
+                left: 50%
+                top: 50%
+                position: absolute
+                margin-top: 0
             .text
                 width: auto !important
                 margin: 0 !important
@@ -479,10 +489,8 @@ footer
             list-style: none
             i
                 margin-right: 7px
-            @media screen and ( max-width: 768px )
-                display: none
             li
-                margin-right: 30px
+                margin-right: 0
                 cursor: pointer
                 &#cartbtn
                     display: block

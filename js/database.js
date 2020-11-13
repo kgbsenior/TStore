@@ -135,6 +135,7 @@ var dataeng = {
     magicobjects:
     [
         'gg',
+        'gg',
         'gg'
     ],
     household:
@@ -306,6 +307,7 @@ var dataeng = {
     ],
     magicobjects:
     [
+        'gg',
         'gg',
         'gg'
     ],

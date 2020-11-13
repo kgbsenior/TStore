@@ -76,6 +76,8 @@ body.darkbody #section-3 h3 {
 
 body.darkbody #section-3 h1 {
   color: #ffffff;
+  text-align: center;
+  font-size: 3em;
 }
 
 body.darkbody #cart {
@@ -291,6 +293,7 @@ header nav ul li#cartbtn {
   #section-1 {
     padding: 15px 7vw;
     height: auto;
+    min-height: 100vh;
   }
   #section-1 .container {
     margin-top: 100px;
@@ -303,6 +306,21 @@ header nav ul li#cartbtn {
             flex-direction: column;
     width: 100%;
   }
+}
+
+@media screen and (max-width: 768px) and (min-height: 650px) {
+  #section-1 .container {
+    -webkit-transform: translate(-50%, -50%) !important;
+            transform: translate(-50%, -50%) !important;
+    width: 90vw;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
   #section-1 .container .text {
     width: auto !important;
     margin: 0 !important;
@@ -793,14 +811,8 @@ footer nav ul i {
   margin-right: 7px;
 }
 
-@media screen and (max-width: 768px) {
-  footer nav ul {
-    display: none;
-  }
-}
-
 footer nav ul li {
-  margin-right: 30px;
+  margin-right: 0;
   cursor: pointer;
 }
 
