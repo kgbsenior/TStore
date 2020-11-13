@@ -342,6 +342,13 @@ header nav ul li#cartbtn {
   color: #ffffff;
 }
 
+@media screen and (max-width: 768px) {
+  #section-1 h1 {
+    font-size: 2em;
+    text-align: left;
+  }
+}
+
 #section-1 #description {
   display: -webkit-box;
   display: -ms-flexbox;
