@@ -134,9 +134,17 @@ var dataeng = {
     ],
     magicobjects:
     [
-        'gg',
-        'gg',
-        'gg'
+        'Magic ointment',
+        'Magic pipe',
+        'A magical wand',
+        'A birdie',
+        'The hedge',
+        'The wel',
+        'The apple',
+        'The pear',
+        'The plum',
+        'Magic ring',
+        'Fairies’ cup'
     ],
     household:
     [

@@ -7,8 +7,6 @@ let magicobjectsplace = document.getElementById("select-magicobjects")
 let householdplace = document.getElementById("select-household")
 let endingplace =  document.getElementById("select-ending")
 
-
-
 outputallData()
 
 function outputallData(){
@@ -61,7 +59,6 @@ let all_blocks = document.getElementsByClassName('block')
 
 
 
-let selectedblocks = {}
 
 
 
@@ -80,23 +77,14 @@ var selectedTotal = 0
 
 
 
-let limitBeginnings = 3
-let limitPlace = 1
-let limitHeroes = 3
-let limitPhrases = 3
-let limitMagic = 3
-let limitMagicObjects = 2
-let limitHousehold = 3
-let limitEndings = 1
-
-selectedblocks.length = all_blocks.length
-
-
-for(let i = 0; i<selectedblocks.length; ++i){
-    selectedblocks[i] = 0
-}
-
-
+let limitBeginnings = beginning_blocks_limit
+let limitPlace = place_blocks_limit
+let limitHeroes = heroes_blocks_limit
+let limitPhrases = phrases_blocks_limit
+let limitMagic = magic_blocks_limit
+let limitMagicObjects = magicobjects_blocks_limit
+let limitHousehold = household_blocks_limit
+let limitEndings = ending_blocks_limit
 
 function lockBlocks(array, limit1, limit2){
     for(let i = limit1; i<array.length; ++i){
@@ -120,7 +108,6 @@ function configBlocks(blocks){
                 if(selected<limit){
                     if(!block.classList.contains('selected')){
                         block.classList.add('selected')
-                        selectedblocks[block.dataset.contentid] = 1
                         block.dataset.selected = 1
                         ++selected
                         if(selected==limit){
@@ -131,7 +118,6 @@ function configBlocks(blocks){
                     else if(block.classList.contains('selected')){
                         --selected
                         block.classList.remove('selected')
-                        selectedblocks[block.dataset.contentid] = 0
                         block.dataset.selected = 0
                         unlockBlocks(document.getElementById(selectid).querySelectorAll(".block"),0, data[datakey].length-1)
                     }
@@ -140,7 +126,6 @@ function configBlocks(blocks){
                     if(block.classList.contains('selected')){
                         --selected
                         block.classList.remove('selected')
-                        selectedblocks[block.dataset.contentid] = 0
                         block.dataset.selected = 0
                         unlockBlocks(document.getElementById(selectid).querySelectorAll(".block"),0, data[datakey].length-1)
                     }
