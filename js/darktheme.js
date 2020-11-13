@@ -1,14 +1,18 @@
-let themeswitcher = document.getElementById('theme-switcher');
+let themeswitcher = document.getElementsByClassName('theme-switcher');
 let isDark = (readCookie('isDark') == 'true');
 
 if(isDark){
     document.body.classList.add("darkbody");
-    themeswitcher.querySelector('i').className = "fas fa-sun";
+    for(let i of themeswitcher){
+        i.querySelector('i').className = "fas fa-sun"
+    }
     createCookie('isDark', true, '10');
 }
 else if(!isDark){
     document.body.classList.remove("darkbody");
-    themeswitcher.querySelector('i').className = "fas fa-moon";
+    for(let i of themeswitcher){
+        i.querySelector('i').className = "fas fa-moon"
+    }
     createCookie('isDark', false, '10');
 }
 
@@ -32,27 +36,34 @@ function readCookie(name) {
     }
     return null;
 }
-
-themeswitcher.addEventListener('click', ()=>{
-    switchtheme();
-})
+for(let i of themeswitcher){
+    i.addEventListener('click', ()=>{
+        switchtheme();
+    })
+}
 
 function switchtheme(){
     if(isDark){
+        for(let i of themeswitcher){
+            i.querySelector('i').className = "fas fa-moon"
+        }
         document.body.classList.remove("darkbody");
-        themeswitcher.querySelector('i').className = "fas fa-moon";
         isDark = false;
         createCookie('isDark', false, '10');
     }
     else if(!isDark){
         document.body.classList.add("darkbody");
-        themeswitcher.querySelector('i').className = "fas fa-sun";
+        for(let i of themeswitcher){
+            i.querySelector('i').className = "fas fa-sun"
+        }
         isDark = true;
         createCookie('isDark', true, '10');
     }
     else if(isDark!=false&isDark!=true){
         document.body.classList.add("darkbody");
-        themeswitcher.querySelector('i').className = "fas fa-sun";
+        for(let i of themeswitcher){
+            i.querySelector('i').className = "fas fa-sun"
+        }
         isDark = !isDark;
         createCookie('isDark', true, '10');
     }

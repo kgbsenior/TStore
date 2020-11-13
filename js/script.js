@@ -178,7 +178,7 @@ function configBlocks(blocks){
 
             
  
-            selectedTotal = selectedBeginnings+selectedPlace+selectedHeroes+selectedPhrases+selectedMagic+selectedHousehold+selectedEndings
+            selectedTotal = selectedBeginnings+selectedPlace+selectedHeroes+selectedPhrases+selectedMagic+selectedHousehold+selectedEndings+selectedMagicObjects
             console.log(selectedTotal)
             changeCart()
         })
@@ -212,30 +212,7 @@ function changeLanguage(a){
 
         language = "bel"
         data = databel
-        beginningplace.innerHTML = ""
-        placesplace.innerHTML = ""
-        heroesplace.innerHTML = ""
-        phrasesplace.innerHTML = ""
-        magicplace.innerHTML = ""
-        householdplace.innerHTML = ""
-        endingplace.innerHTML = ""
-        selectedTotal = 0
-        selectedBeginnings = 0
-        selectedPlace = 0
-        selectedHeroes = 0
-        selectedPhrases = 0
-        selectedMagic = 0
-        selectedHousehold = 0
-        selectedEndings = 0
-        outputData("beginnings", beginningplace, "select-beginning")
-        outputData("places", placesplace, "select-place")
-        outputData("heroes", heroesplace, "select-heroes")
-        outputData("phrases", phrasesplace, "select-phrases")
-        outputData("magic", magicplace, "select-magic")
-        outputData("magicobjects", magicobjectsplace, "select-magicobjects")
-        outputData("household", householdplace, "select-household")
-        outputData("ending", endingplace, "select-ending")
-        changeCart()
+        resetCards()
     }
     else if(a == "eng" & language == "bel"){
         document.getElementById("bellang").classList.remove("langselected")
@@ -243,29 +220,34 @@ function changeLanguage(a){
 
         language = "eng"
         data = dataeng
-        beginningplace.innerHTML = ""
-        placesplace.innerHTML = ""
-        heroesplace.innerHTML = ""
-        phrasesplace.innerHTML = ""
-        magicplace.innerHTML = ""
-        householdplace.innerHTML = ""
-        endingplace.innerHTML = ""
-        selectedTotal = 0
-        selectedBeginnings = 0
-        selectedPlace = 0
-        selectedHeroes = 0
-        selectedPhrases = 0
-        selectedMagic = 0
-        selectedHousehold = 0
-        selectedEndings = 0
-        outputData("beginnings", beginningplace, "select-beginning")
-        outputData("places", placesplace, "select-place")
-        outputData("heroes", heroesplace, "select-heroes")
-        outputData("phrases", phrasesplace, "select-phrases")
-        outputData("magic", magicplace, "select-magic")
-        outputData("magicobjects", magicobjectsplace, "select-magicobjects")
-        outputData("household", householdplace, "select-household")
-        outputData("ending", endingplace, "select-ending")
-        changeCart()
+        resetCards()
     }
+}
+
+function resetCards(){
+    beginningplace.innerHTML = ""
+    placesplace.innerHTML = ""
+    heroesplace.innerHTML = ""
+    phrasesplace.innerHTML = ""
+    magicplace.innerHTML = ""
+    magicobjectsplace.innerHTML = ""
+    householdplace.innerHTML = ""
+    endingplace.innerHTML = ""
+    selectedTotal = 0
+    selectedBeginnings = 0
+    selectedPlace = 0
+    selectedHeroes = 0
+    selectedPhrases = 0
+    selectedMagic = 0
+    selectedHousehold = 0
+    selectedEndings = 0
+    outputData("beginnings", beginningplace, "select-beginning")
+    outputData("places", placesplace, "select-place")
+    outputData("heroes", heroesplace, "select-heroes")
+    outputData("phrases", phrasesplace, "select-phrases")
+    outputData("magic", magicplace, "select-magic")
+    outputData("magicobjects", magicobjectsplace, "select-magicobjects")
+    outputData("household", householdplace, "select-household")
+    outputData("ending", endingplace, "select-ending")
+    changeCart()
 }

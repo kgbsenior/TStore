@@ -23,9 +23,14 @@
                     <a href="index.html">Fairy Tale Store</a>
                 </figcaption>
             </figure>
-                <i class="fas fa-shopping-cart opencart" id="cartbtn"><span class="cartcounter">0</span></i>
+            <div id="mobile-navbar">
+                <ul>
+                    <li><i class="fas fa-shopping-cart opencart" id="cartbtn"><span class="cartcounter">0</span></i></li>
+                    <li class="theme-switcher"><i class="fas fa-sun"></i></li>
+                </ul>
+            </div>
             <ul>
-                <li id="theme-switcher"><i class="fas fa-sun"></i>Dark</li>
+                <li class="theme-switcher"><i class="fas fa-sun"></i>Dark</li>
                 <li><i class="fas fa-envelope"></i>Contacts</li>
                 <li class="opencart"><i class="fas fa-shopping-cart"></i></i>Cart<span class="cartcounter">0</span></li>
             </ul>
@@ -33,8 +38,9 @@
     </header>
     <main>
         <section id="section-1">
+            <div class="container">
+                <div class="text">
             <h1>Create your own tale!</h1>
-            <span>
                 <div>
                     Welcome to our Internet site “Fairy tale store”! We can help you to develop your communicative
                     skills 
@@ -44,7 +50,8 @@
                     future 
                     story and here we go…
                 </div>
-                <div>
+                </div>
+                <div class="text">
                     "Fairy tales are contagious.
                     <br>
                     They are passed from person to person,
@@ -57,11 +64,11 @@
                     <br>
                     <b>- © Neil Gaiman</b>
                 </div>
-            </span>
+        </div>
         </section>
         <section id="section-2">
             <article id="description">
-                <div id="englang" class="description-block selectedlang" id="selheroeslink"><img src="img/uk.png" alt="0" width="15px" height="10px">English</div>
+                <div id="englang" class="description-block langselected" id="selheroeslink"><img src="img/uk.png" alt="0" width="15px" height="10px">English</div>
                 <div id="bellang" class="description-block"><img src="img/bel.png" alt="0" width="15px" height="10px">Belarusian</div>
             </article>
             <h2 class="figure-header" id="beginningheader">Choose the beginning</h2>
@@ -100,9 +107,29 @@
 
 
         </section>
+        <section id="section-3">
+            <h1>Results:</h1>
+            <h3>Beginnings:</h3>
+            <div class="r-place"></div>
+            <h3>Places:</h3>
+            <div class="r-place"></div>
+            <h3>Heroes:</h3>
+            <div class="r-place">    </div>
+            <h3>Phrases:</h3>
+            <div class="r-place"></div>
+
+                <h3>Magic objects:</h3>
+                <div class="r-place"></div>
+            <h3>Magic:</h3>
+            <div class="r-place"></div>
+            <h3>Household:</h3>
+            <div class="r-place"></div>
+            <h3>Ending:</h3>
+            <div class="r-place"></div>
+        </section>
     </main>
     <footer>
-        <div>sadasdasdasdasd</div> 
+        <div>sassaas</div> 
         <nav>
             <figure>
                 <figcaption>
@@ -132,23 +159,25 @@
         <h2 id="cart-header">Cart</h2>
         <div id="cart-field">
             <h3>Beginnings:</h3>
-            <div id="cart-beginnings"></div>
+            <div class="cart-place"></div>
             <h3>Places:</h3>
-            <div id="cart-places"></div>
+            <div class="cart-place"></div>
             <h3>Heroes:</h3>
-            <div id="cart-heroes">    </div>
+            <div class="cart-place">    </div>
             <h3>Phrases:</h3>
-            <div id="cart-phrases"></div>
-                <h3>Household:</h3>
-                <div id="cart-household"></div>
+            <div class="cart-place"></div>
+            <h3>Magic objects:</h3>
+            <div class="cart-place"></div>
             <h3>Magic:</h3>
-            <div id="cart-magic"></div>
+            <div class="cart-place"></div>
+            <h3>Household:</h3>
+            <div class="cart-place"></div>
             <h3>Ending:</h3>
-            <div id="cart-endings"></div>
+            <div class="cart-place"></div>
         </div>
         <p id="selected-heroes-counter"></p>
         <div id="cart-btns">
-            <div id="generate">Generate!</div>
+            <a id="generate">Generate!</a>
         </div>
     </div>
     <div id="alert">

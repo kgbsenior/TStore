@@ -1,17 +1,8 @@
 let cart = document.getElementById("cart")
-//let heroesplace = document.getElementById("heroes-place")
 let opencartbtn = document.getElementsByClassName('opencart')
 let cartOpened = false
 
-
-let cartbeginnings = document.getElementById("cart-beginnings")
-let cartplaces = document.getElementById("cart-places")
-let cartheroes = document.getElementById("cart-heroes")
-let cartphrases = document.getElementById("cart-phrases")
-let cartmagic = document.getElementById("cart-magic")
-let carthousehold = document.getElementById("cart-household")
-let cartendings = document.getElementById("cart-endings")
-
+let cartPlaces = document.getElementsByClassName('cart-place')
 
 document.getElementById('darkscreen').addEventListener('click', ()=>{
     openCart()
@@ -47,80 +38,92 @@ function changeCart(){
     document.getElementsByClassName('cartcounter')[0].innerHTML = selectedTotal.toString()
     document.getElementsByClassName('cartcounter')[1].innerHTML = selectedTotal.toString()
 
+    for(let i of cartPlaces){
+        i.innerHTML = ""
+    }
 
-    cartbeginnings.innerHTML = ""
-    cartplaces.innerHTML = ""
-    cartheroes.innerHTML = ""
-    cartphrases.innerHTML = ""
-    cartmagic.innerHTML = ""
-    carthousehold.innerHTML = ""
-    cartendings.innerHTML = ""
-
-    //heroesplace.innerHTML = ''
     all_blocks = document.getElementsByClassName('block')
     for(let i = 0; i<all_blocks.length; ++i){
         if(all_blocks[i].dataset.selected == 1){
            switch(all_blocks[i].dataset.datakey){
                 case 'beginnings': 
-                    cartbeginnings.insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
+                    cartPlaces[0].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
                 break;
                 case 'places':
-                    cartplaces.insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
+                    cartPlaces[1].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
                 break;
                 case 'heroes':
-                    cartheroes.insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
+                    cartPlaces[2].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
                 break;
                 case 'phrases':
-                    cartphrases.insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
+                    cartPlaces[3].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
+                break;
+                case "magicobjects":
+                    cartPlaces[4].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
                 break;
                 case "magic":
-                    cartmagic.insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
+                    cartPlaces[5].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
                 break;
                 case "household":
-                    carthousehold.insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
+                    cartPlaces[6].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
                 break;
                 case "ending":
-                    cartendings.insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
+                    cartPlaces[7].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
                 break
            }
         }
     }
+}
 
-    /*
-    if(selectedBeginnings!=0){
-        for(let i = 0; i<data['beginnings'].length;++i){
-            alert(data["beginnings"][i])
+
+
+document.getElementById("generate").addEventListener('click', ()=>{
+    generateTable()
+})
+function generateTable(){
+    if(selectedBeginnings>0&selectedHeroes>0&selectedPhrases>0&selectedMagic>0&selectedMagicObjects>0&selectedHousehold>0&selectedEndings>0){
+        openCart()
+        scrollTo(0, getCoords('section-3')+pageYOffset)
+        let ResultPlaces = document.getElementsByClassName('r-place')
+        all_blocks = document.getElementsByClassName('block')
+        for(let i of ResultPlaces){
+            i.innerHTML = ""
         }
-    }
-    if(selectedPlace!=0){
-        for(let i = 0; i<data['places'].length;++i){
-            
+        for(let i = 0; i<all_blocks.length; ++i){
+            if(all_blocks[i].dataset.selected == 1){
+               switch(all_blocks[i].dataset.datakey){
+                    case 'beginnings': 
+                        ResultPlaces[0].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`)
+                    break;
+                    case 'places':
+                        ResultPlaces[1].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`)
+                    break;
+                    case 'heroes':
+                        ResultPlaces[2].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`)
+                    break;
+                    case 'phrases':
+                        ResultPlaces[3].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`)
+                    break;
+                    case "magicobjects":
+                        ResultPlaces[4].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`)
+                    break;
+                    case "magic":
+                        ResultPlaces[5].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`)
+                    break;
+                    case "household":
+                        ResultPlaces[6].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`)
+                    break;
+                    case "ending":
+                        ResultPlaces[7].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`)
+                    break;
+               }
+            }
         }
+        resetCards()
     }
-    if(selectedHeroes){
-        for(let i = 0; i<data['heroes'].length;++i){
-            
-        }
+    else{
+        customalert("Please select words in all cetegories to see the results")
     }
-    if(selectedPhrases!=0){
-        for(let i = 0; i<data['phrases'].length;++i){
-            
-        }
-    }
-    if(selectedMagic){
-        for(let i = 0; i<data['magic'].length;++i){
-            
-        }
-    }
-    if(selectedHousehold>0){
-        for(let i = 0; i<data['household'].length;++i){
-            
-        }
-    }
-    if(selectedEndings>0){
-        for(let i = 0; i<data['ending'].length;++i){
-            
-        }
-    }
-    */
+    
+
 }
