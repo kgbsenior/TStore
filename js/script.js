@@ -195,7 +195,6 @@ function resetCards(){
     selectedMagic = 0
     selectedHousehold = 0
     selectedEndings = 0
-    document.getElementById('section-3').classList.remove('active')
     outputallData()
     changeCart()
 }
