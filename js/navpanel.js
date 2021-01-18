@@ -11,7 +11,7 @@ function navPanel(){
     }
 
 
-    if(pageYOffset>500){
+    if(pageYOffset>600){
         navpanel.classList.add("active")
     }
     else{

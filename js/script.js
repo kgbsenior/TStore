@@ -177,31 +177,6 @@ function configBlocks(blocks){
 
 
 
-let language = "eng"
-document.getElementById("englang").addEventListener('click', ()=>{
-    changeLanguage("eng")
-})
-
-document.getElementById("bellang").addEventListener('click', ()=>{
-    changeLanguage("bel")
-})
-
-function changeLanguage(a){
-    if(a == "bel" & language == "eng"){
-        document.getElementById("bellang").classList.add("langselected")
-        document.getElementById("englang").classList.remove("langselected")
-        language = "bel"
-        data = databel
-        resetCards()
-    }
-    else if(a == "eng" & language == "bel"){
-        document.getElementById("bellang").classList.remove("langselected")
-        document.getElementById("englang").classList.add("langselected")
-        language = "eng"
-        data = dataeng
-        resetCards()
-    }
-}
 
 function resetCards(){
     beginningplace.innerHTML = ""
@@ -220,6 +195,7 @@ function resetCards(){
     selectedMagic = 0
     selectedHousehold = 0
     selectedEndings = 0
+    document.getElementById('section-3').classList.remove('active')
     outputallData()
     changeCart()
 }

@@ -83,6 +83,7 @@ document.getElementById("generate").addEventListener('click', ()=>{
 function generateTable(){
     if(selectedBeginnings>0&selectedHeroes>0&selectedPhrases>0&selectedMagic>0&selectedMagicObjects>0&selectedHousehold>0&selectedEndings>0){
         openCart()
+        document.getElementById('section-3').classList.add('active')
         scrollTo(0, getCoords('section-3')+pageYOffset)
         let ResultPlaces = document.getElementsByClassName('r-place')
         all_blocks = document.getElementsByClassName('block')

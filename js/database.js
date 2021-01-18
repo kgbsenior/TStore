@@ -252,28 +252,26 @@ var dataeng = {
     ],
     phrases:
     [
-        "First, ... Second, ..., Third, ... Finally",
-        "On the one hand, ... On the other hand ... Some people believe Others ...",
-        "Which, That, Who ...",
-        "Since, as well as, though, unless ...",
-        "Moreover, therefore, as a result, otherwise, besides",
-        "For example ..., For instance ... such as ...",
-        "If you ..., you will ...",
-        "If I ..., I would ...",
-        "In fact ...",
-        "Generally speaking ...",
-        "Frankly speaking ...",
-        "To be honest with you I should say ...",
-        "Well ...",
-        "You see ...",
-        "You know, ...",
-        "I've never thought about it.",
-        "That's a good question!",
-        "All right,",
-        "Sadly, ...",
-        "Unfortunataly, ...",
-        "Luckily, ..."
-
+        "Спачатку... Потым... А пасля... Напрыканцы",
+        "З аднаго боку... З другога боку...",
+        "Негледзячы на...",
+        "Так цi iнакш...",
+        "Хочаш ня хочаш...",
+        "Акрамя таго...",
+        "Вiдавочна...",
+        "Знянацку...",
+        "Праз нейкi час",
+        "Нi..., нi...",
+        "З таго часу...",
+        "Аля...",
+        "Шчыра кажуць",
+        "На самай справе...",
+        "Напрыклад...",
+        "iшоў-iшоў...",
+        "Калi... дык...",
+        "Ажно...",
+        "На шчасце...",
+        "Да няшчасця..."
     ],
     magic:
     [
@@ -345,16 +343,16 @@ var dataeng = {
     ],
     ending:
     [
-        '…and they all lived happy and died happy, and never drank out of a dry cappy.',
-        '…and they lived happy ever afterwards.',
-        "… till the day of her death.",
-        "…and they all lived happy as could be ever afterwards.",
-        "And they were married, and he and she are living happy to this day for aught I know.",
-        "That's all",
-        "…and was never seen again.",
-        "And they lived happy all their days.",
-        "Now I can say...",
-        "I wish in conclusion to express the opinion"   
+        'А злую мачаху і яе дачку больш да сабе і на парог не пускалі.',
+        'Байку вам сказаў, усе роўна як звязаў, а тыя ўсё жывуць, мёд, віно п’юць, мне не даюць.',
+        "Усяго там было: хто хацеў, той піў і еў. І я там быў, еў і піў, па барадзе цяк-ло, а ў роце не было.",
+        "Так з таго часу і жыве з куртатым хвастом.",
+        "Пачуўшы гэта, пан усхапіўся на ногі і так драпануў назад у свой маёнтак, што толькі яго і бачылі.",
+        "З таго часу больш і не сябруюць саба-ка з ваўком.",
+        "Пачуўшы такія навіны, пан зваліўся з крэсла, а Сцёпка закурыў люлечку ды падаўся сабе да хаты.",
+        "І сталі яны жыць-пажываць і дабра нажываць.",
+        "Так і стаў дурань панаваць у Змеевым двары. Праўда, разумнейшым ён не стаў. Але нашто багатаму розум? У ка-го грошай стае, дык і розум дае!",
+        "З таго часу ён і баіцца сустракацца з чалавекам."   
     ]
 
   };
