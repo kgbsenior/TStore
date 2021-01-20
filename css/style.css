@@ -338,21 +338,6 @@ header nav ul li#cartbtn {
             flex-direction: column;
     width: 100%;
   }
-}
-
-@media screen and (max-width: 768px) and (min-height: 650px) {
-  #section-1 .container {
-    -webkit-transform: translate(-50%, -50%) !important;
-            transform: translate(-50%, -50%) !important;
-    width: 90vw;
-    left: 50%;
-    top: 50%;
-    position: absolute;
-    margin-top: 0;
-  }
-}
-
-@media screen and (max-width: 768px) {
   #section-1 .container .text {
     width: auto !important;
     margin: 0 !important;
@@ -399,7 +384,6 @@ header nav ul li#cartbtn {
 @media screen and (max-width: 768px) {
   #section-1 #lang-switcher-block {
     position: static;
-    width: 100%;
     margin-top: 15px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

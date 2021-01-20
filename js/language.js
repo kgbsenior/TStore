@@ -27,6 +27,7 @@ function changeLanguage(a){
         document.body.classList.remove('englang');
         document.body.classList.add('bellang');
         resetCards()
+        resetLimits()
     }
     else if(a == "eng"){
         document.body.classList.remove("bellang");
@@ -39,5 +40,6 @@ function changeLanguage(a){
         createCookie('isBel', false, '10');
         data = dataeng
         resetCards()
+        resetLimits()
     }
 }

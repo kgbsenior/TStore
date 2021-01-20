@@ -5,6 +5,7 @@ let phrasesplace = document.getElementById("select-phrases")
 let magicplace = document.getElementById("select-magic")
 let magicobjectsplace = document.getElementById("select-magicobjects")
 let householdplace = document.getElementById("select-household")
+let actionsplace = document.getElementById("select-actions")
 let endingplace =  document.getElementById("select-ending")
 
 outputallData()
@@ -17,6 +18,7 @@ function outputallData(){
     outputData("magic", magicplace)
     outputData("magicobjects", magicobjectsplace)
     outputData("household", householdplace)
+    outputData("actions", actionsplace)
     outputData("ending", endingplace)
 }
 
@@ -27,65 +29,83 @@ function outputData(datakey, place){
     configBlocks(place.querySelectorAll('.block'))
 }
 
+var beginnings_blocks_limit = 0
+var place_blocks_limit = 0
+var heroes_blocks_limit = 0
+var phrases_blocks_limit = 0
+var magic_blocks_limit = 0
+var magicobjects_blocks_limit = 0
+var household_blocks_limit = 0
+var actions_blocks_limit = 0
+var ending_blocks_limit = 0
 
+var all_blocks = 0
 
-let beginning_blocks_limit = document.getElementById("select-beginning").querySelectorAll(".block").length-1
-let place_blocks_limit = document.getElementById("select-place").querySelectorAll(".block").length-1
-let heroes_blocks_limit = document.getElementById("select-heroes").querySelectorAll(".block").length-1
-let phrases_blocks_limit = document.getElementById("select-phrases").querySelectorAll(".block").length-1
-let magic_blocks_limit = document.getElementById("select-magic").querySelectorAll(".block").length-1
-let magicobjects_blocks_limit = document.getElementById("select-magicobjects").querySelectorAll(".block").length-1
-let household_blocks_limit = document.getElementById("select-household").querySelectorAll(".block").length-1
-let ending_blocks_limit = document.getElementById("select-ending").querySelectorAll(".block").length
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let all_blocks = document.getElementsByClassName('block')
-
-
-
-
-
-
-
-
-
-let selectedBeginnings = 0
-let selectedPlace = 0
-let selectedHeroes = 0
-let selectedPhrases = 0
-let selectedMagic = 0
-let selectedMagicObjects = 0
-let selectedHousehold = 0
-let selectedEndings = 0
+var selectedBeginnings = 0
+var selectedPlace = 0
+var selectedHeroes = 0
+var selectedPhrases = 0
+var selectedMagic = 0
+var selectedMagicObjects = 0
+var selectedHousehold = 0
+var selectedActions = 0
+var selectedEndings = 0
 
 
 var selectedTotal = 0
 
 
 
-let limitBeginnings = beginning_blocks_limit
-let limitPlace = place_blocks_limit
-let limitHeroes = heroes_blocks_limit
-let limitPhrases = phrases_blocks_limit
-let limitMagic = magic_blocks_limit
-let limitMagicObjects = magicobjects_blocks_limit
-let limitHousehold = household_blocks_limit
-let limitEndings = ending_blocks_limit
+var limitBeginnings = 0
+var limitPlace = 0
+var limitHeroes = 0
+var limitPhrases = 0
+var limitMagic = 0
+var limitMagicObjects = 0
+var limitHousehold = 0
+var limitActions = 0
+var limitEndings = 0
 
+resetLimits()
+
+function resetLimits(){
+    beginnings_blocks_limit = document.getElementById("select-beginning").querySelectorAll(".block").length
+    place_blocks_limit = document.getElementById("select-place").querySelectorAll(".block").length
+    heroes_blocks_limit = document.getElementById("select-heroes").querySelectorAll(".block").length
+    phrases_blocks_limit = document.getElementById("select-phrases").querySelectorAll(".block").length
+    magic_blocks_limit = document.getElementById("select-magic").querySelectorAll(".block").length
+    magicobjects_blocks_limit = document.getElementById("select-magicobjects").querySelectorAll(".block").length
+    household_blocks_limit = document.getElementById("select-household").querySelectorAll(".block").length
+    actions_blocks_limit = document.getElementById("select-actions").querySelectorAll(".block").length
+    ending_blocks_limit = document.getElementById("select-ending").querySelectorAll(".block").length
+
+    all_blocks = document.getElementsByClassName('block')
+
+    selectedBeginnings = 0
+    selectedPlace = 0
+    selectedHeroes = 0
+    selectedPhrases = 0
+    selectedMagic = 0
+    selectedMagicObjects = 0
+    selectedHousehold = 0
+    selectedActions = 0
+    selectedEndings = 0
+
+
+    selectedTotal = 0
+
+
+
+    limitBeginnings = beginnings_blocks_limit
+    limitPlace = place_blocks_limit
+    limitHeroes = heroes_blocks_limit
+    limitPhrases = phrases_blocks_limit
+    limitMagic = magic_blocks_limit
+    limitMagicObjects = magicobjects_blocks_limit
+    limitHousehold = household_blocks_limit
+    limitActions = actions_blocks_limit
+    limitEndings = ending_blocks_limit
+}
 function lockBlocks(array, limit1, limit2){
     for(let i = limit1; i<array.length; ++i){
         array[i].classList.add('blocked')
@@ -157,6 +177,9 @@ function configBlocks(blocks){
                 case "household":
                     selectedHousehold = checkBlock(selectedHousehold, limitHousehold, "select-household", "household")
                 break;
+                case "actions":
+                    selectedActions = checkBlock(selectedActions, limitActions, "select-actions", "actions")
+                break;
                 case "ending":
                     selectedEndings = checkBlock(selectedEndings, limitEndings, "select-ending", "ending")
                 break
@@ -165,7 +188,7 @@ function configBlocks(blocks){
 
             
  
-            selectedTotal = selectedBeginnings+selectedPlace+selectedHeroes+selectedPhrases+selectedMagic+selectedHousehold+selectedEndings+selectedMagicObjects
+            selectedTotal = selectedBeginnings+selectedPlace+selectedHeroes+selectedPhrases+selectedMagic+selectedHousehold+selectedActions+selectedEndings+selectedMagicObjects
             console.log(selectedTotal)
             changeCart()
         })
@@ -186,6 +209,7 @@ function resetCards(){
     magicplace.innerHTML = ""
     magicobjectsplace.innerHTML = ""
     householdplace.innerHTML = ""
+    actionsplace.innerHTML = ""
     endingplace.innerHTML = ""
     selectedTotal = 0
     selectedBeginnings = 0
@@ -194,6 +218,7 @@ function resetCards(){
     selectedPhrases = 0
     selectedMagic = 0
     selectedHousehold = 0
+    selectedActions = 0
     selectedEndings = 0
     outputallData()
     changeCart()

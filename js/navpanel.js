@@ -61,12 +61,17 @@ function navPanel(){
         }
         navPanBtns[6].classList.add('active')
     }
-
-    else if(getCoords('endingheader')>=0&getCoords('endingheader')>=-180&getCoords('endingheader')<80){
+    else if(getCoords('actionsheader')>=0&getCoords('actionsheader')>=-180&getCoords('actionsheader')<80){
         for(let btn of navPanBtns){
             btn.classList.remove('active')
         }
         navPanBtns[7].classList.add('active')
+    }
+    else if(getCoords('endingheader')>=0&getCoords('endingheader')>=-180&getCoords('endingheader')<80){
+        for(let btn of navPanBtns){
+            btn.classList.remove('active')
+        }
+        navPanBtns[8].classList.add('active')
     }
 }
 

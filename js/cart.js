@@ -67,8 +67,11 @@ function changeCart(){
                 case "household":
                     cartPlaces[6].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
                 break;
-                case "ending":
+                case "actions":
                     cartPlaces[7].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
+                break;
+                case "ending":
+                    cartPlaces[8].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`+`</br>`)
                 break
            }
         }
@@ -114,8 +117,11 @@ function generateTable(){
                     case "household":
                         ResultPlaces[6].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`)
                     break;
-                    case "ending":
+                    case "actions":
                         ResultPlaces[7].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`)
+                    break;
+                    case "ending":
+                        ResultPlaces[8].insertAdjacentHTML('beforeend', `<figure>`+all_blocks[i].dataset.contenttext+`</figure>`)
                     break;
                }
             }

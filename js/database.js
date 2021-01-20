@@ -14,11 +14,10 @@ var dataeng = {
         "Long before Arthur and the Knights of the Round Table ...",
         "There was once a man who ...",
         "In the days of the great King Arthur there lived ...",
-        "Once upon a time when pigs spoke",
-        "rhyme ...",
+        "Once upon a time when pigs spoke rhyme ...",
         "The date of foundation ...",
         "When was it mentioned",
-        "Whan was it first discussed"
+        "When was it first discussed"
     ],
     places:
     [
@@ -90,7 +89,7 @@ var dataeng = {
         "That's a good question!",
         "All right,",
         "Sadly, ...",
-        "Unfortunataly, ...",
+        "Unfortunately, ...",
         "Luckily, ..."
 
     ],
@@ -139,12 +138,12 @@ var dataeng = {
         'A magical wand',
         'A birdie',
         'The hedge',
-        'The wel',
+        'The well',
         'The apple',
         'The pear',
         'The plum',
         'Magic ring',
-        'Fairies’ cup'
+        'Fairy cup'
     ],
     household:
     [
@@ -173,6 +172,25 @@ var dataeng = {
         "Fireplace",
         "Purse",
         "Bag"
+    ],
+    actions:
+    [
+        'Went (to / abroad / for away',
+        "Played (smth / with smb)",
+        "Put (a spell on smb)",
+        "Gave (smth to smb)",
+        "Rode (horseback / horse to death / a race)",
+        "Took (a risk)",
+        "Saw (into the future / smb / smth",
+        "Cried (eyes out / for the moon / out",
+        "Made (of / a sound / trouble / a decision",
+        "Told / said / spoke",
+        "Knew (What's what / right from wrong",
+        "Ran (out of smth / away / a risk)",
+        "Found (dead / out that...)",
+        "Travelled (light / far from / alone)",
+        "Saved (life / oneself / for a rainy day",
+        "Disappeared (from smb's view / forever)"
     ],
     ending:
     [
@@ -235,7 +253,7 @@ var dataeng = {
         "Маці",
         "Тата",
         "Муж",
-        "Жанка",
+        "Жонка",
         "Унук",
         "Унучка",
         "Старац",
@@ -247,7 +265,7 @@ var dataeng = {
         "Ведзьма",
         "Слуга",
         "Удава",
-        "Сялянін",
+        "Селянін",
         "Сялянка"
     ],
     phrases:
@@ -275,47 +293,54 @@ var dataeng = {
     ],
     magic:
     [
-        "Grindylow",
-        "Kumara",
-        "Dracks",
-        "Asrai",
-        "Selki",
-        "Leprekons",
-        "Oaklets",
-        "Brownie",
-        "Green women",
-        "Hillmen",
-        "Giants",
-        "Trolls",
-        "Gleistig",
-        "Gremlins",
-        "Danny",
-        "Baggeyn",
-        "Grant",
-        "Hobbits",
-        "Topotun",
-        "Werewold",
-        "Akheron",
-        "Bargest",
-        "Kalyakh-vare",
-        "Dobie",
-        "Hobgoblin",
-        "Bug",
-        "Killmulis",
-        "Klabauterman",
-        "Boggart",
-        "Fak-kahn",
-        "Goblins",
-        "Red Caps",
-        "Hobii",
-        "Orcs",
-        "Gooseberry`s wife"
+        "Вадзянiк",
+        "Балотнiк",
+        "Жэўжык",
+        "Лазовiк",
+        "Азёрнiцы",
+        "Аржавенiк",
+        "Цар-рыба",
+        "Хаджун",
+        "Вужыны цар",
+        "Вужакi",
+        "Ягiня",
+        "Зазувкi",
+        "Гарцук",
+        "Паветрiкi",
+        "Дамавiк",
+        "Еўнiк",
+        "Хлеўнiк",
+        "Пячурнiк",
+        "Хатнiк",
+        "Жыцень",
+        "Асiлак",
+        "Дзедка",
+        "Дзяды",
+        "Хапун",
+        "Жалезная бабка",
+        "Трасца",
+        "Расамаха",
+        "Валасень",
+        "Сярбай",
+        "Злыдзень",
+        "Кумяльган",
+        "Белая смерць",
+        "Гагатун"
     ],
     magicobjects:
     [
-        'gg',
-        'gg',
-        'gg'
+        'Чароўныя лекi',
+        'Чароўная палачка',
+        'Яблык',
+        'Слiва',
+        'Чароўны кубак',
+        'Чароўная дудка',
+        'Птушка',
+        'Калодзеж',
+        'Чароўнае кальцо',
+        'Груша',
+        'Верасцяно',
+        'Торба'
     ],
     household:
     [
@@ -340,6 +365,27 @@ var dataeng = {
         "Кошак",
         "Кашалёк",
         "Торба"
+    ],
+    actions:
+    [
+        'Выправiў',
+        'Прыставiў',
+        'Задрамаў',
+        'Пайшоў',
+        'Сеў',
+        'Усьмiхнуўся',
+        'Прытаiўся',
+        'Жыў',
+        'Спадабаўся',
+        'Паслухаў',
+        'Зажмурыўся',
+        'Гадаваў',
+        'Пытаецца',
+        'Пачаў скардзiцца',
+        'Плача',
+        'Кажа',
+        'Здзiвiўся',
+        'Прыскакаў'
     ],
     ending:
     [
